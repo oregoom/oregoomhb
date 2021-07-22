@@ -2,13 +2,13 @@
 <html amp <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!--<script async src="https://cdn.ampproject.org/v0.js"></script>-->
     <title><?php wp_title(); ?></title>
     
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width">-->
     
 <!--    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -176,7 +176,9 @@
                 </div>
 
                 <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
-                    <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>"><img style="margin-top: 10px; margin-left: 50px;" src="<?php echo get_template_directory_uri(); ?>/historiasdelabiblia-logo-oficial-140x42.png"></a>
+                    <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+                        <img style="margin-top: 10px; margin-left: 50px;" src="<?php echo get_template_directory_uri(); ?>/historiasdelabiblia-logo-oficial-140x42.png">
+                    </a>
                     <div class="navbar-collapse" style="padding: 10px 50px 10px 50px;">
                         <ul class="navbar-nav ml-auto">
                             

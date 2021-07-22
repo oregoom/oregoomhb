@@ -126,7 +126,7 @@ function oregoom_navegation_menus(){
         $subMenu = '';
 
 
-    //echo '<div class="p-3 mb-2 bg-white text-dark"><pre>'; print_r($oregoomMenus); echo '</pre></div>';//imprimir el array 
+//    echo '<div class="p-3 mb-2 bg-white text-dark"><pre>'; print_r($oregoomMenus); echo '</pre></div>';//imprimir el array 
 
         if( ! empty($oregoomMenus) ){
 
@@ -141,7 +141,14 @@ function oregoom_navegation_menus(){
                     <li class="nav-item active dropdown ml-3">                    
                         <?php
 
-                        $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>';
+                        //target para AMP tiene que tener un valor
+                        if($oregoomMenu->target == ""){
+                            $target = "_self";
+                        } else {
+                            $target = $oregoomMenu->target;
+                        }
+                        
+                        $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$target.'">'.$oregoomMenu->title.'</a>';
 
                         foreach ($oregoomMenus as $oregoomSubMenu) {
                             if($idMenu == $oregoomSubMenu->menu_item_parent){
