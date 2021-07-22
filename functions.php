@@ -115,59 +115,64 @@ function oregoom_navegation_menus(){
     
     $oregoom_menu_name = 'menu-principal';
     $oregoom_locations = get_nav_menu_locations();
-    $oregoom_menu = wp_get_nav_menu_object( $oregoom_locations[ $oregoom_menu_name ] );
-    $oregoomMenus = wp_get_nav_menu_items( $oregoom_menu->term_id);
     
-    $menuPrincipal = '';
-    $subMenu = '';
+    if( $oregoom_locations ){ //Si ya tiene menú asignado o creado
+        
+        $oregoom_menu = wp_get_nav_menu_object( $oregoom_locations[ $oregoom_menu_name ] );
     
-    
-//echo '<div class="p-3 mb-2 bg-white text-dark"><pre>'; print_r($oregoomMenus); echo '</pre></div>';//imprimir el array 
-    
-    if( ! empty($oregoomMenus) ){
+        $oregoomMenus = wp_get_nav_menu_items( $oregoom_menu->term_id);
 
-        foreach ($oregoomMenus as $oregoomMenu) {
-            
-            $subMenuExist = false;
-            
-            $idMenu = $oregoomMenu->ID;
-            
-            if($oregoomMenu->menu_item_parent == 0){
-                ?>
-                <li class="nav-item active dropdown ml-3">                    
-                    <?php
+        $menuPrincipal = '';
+        $subMenu = '';
 
-                    $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>';
-                    
-                    foreach ($oregoomMenus as $oregoomSubMenu) {
-                        if($idMenu == $oregoomSubMenu->menu_item_parent){
-                            
-                            $subMenuExist = true;
-                            
-                            $inicioSubMenu = '<div class="dropdown-menu border-0 shadow-sm" style="border-top: 2px #8B3D88 solid!important;" aria-labelledby="navbarDropdown'.$oregoomSubMenu->menu_item_parent.'">';
-                            $finSubMenu = '</div>';
-                            $subMenu = $subMenu . '<a class="dropdown-item" href="'.esc_url($oregoomSubMenu->url).'" target="'.$oregoomSubMenu->target.'">'.$oregoomSubMenu->title.'</a>';
-                            
-                        }
-                    }
 
-                    if($subMenuExist == false){
-                        
-                        echo $menuPrincipal;
-                        
-                    } else {
-                        
-                        echo '<a class="nav-link dropdown-toggle" href="'.esc_url($oregoomMenu->url).'" id="navbarDropdown'.$idMenu.'" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>'.$inicioSubMenu.$subMenu.$finSubMenu;
-                        
-                        $inicioSubMenu = '';
-                        $finSubMenu = '';
-                        $subMenu = '';
-                    }             
+    //echo '<div class="p-3 mb-2 bg-white text-dark"><pre>'; print_r($oregoomMenus); echo '</pre></div>';//imprimir el array 
+
+        if( ! empty($oregoomMenus) ){
+
+            foreach ($oregoomMenus as $oregoomMenu) {
+
+                $subMenuExist = false;
+
+                $idMenu = $oregoomMenu->ID;
+
+                if($oregoomMenu->menu_item_parent == 0){
                     ?>
-                </li>
-                <?php            
-            }
-        }                    
+                    <li class="nav-item active dropdown ml-3">                    
+                        <?php
+
+                        $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>';
+
+                        foreach ($oregoomMenus as $oregoomSubMenu) {
+                            if($idMenu == $oregoomSubMenu->menu_item_parent){
+
+                                $subMenuExist = true;
+
+                                $inicioSubMenu = '<div class="dropdown-menu border-0 shadow-sm" style="border-top: 2px #8B3D88 solid!important;" aria-labelledby="navbarDropdown'.$oregoomSubMenu->menu_item_parent.'">';
+                                $finSubMenu = '</div>';
+                                $subMenu = $subMenu . '<a class="dropdown-item" href="'.esc_url($oregoomSubMenu->url).'" target="'.$oregoomSubMenu->target.'">'.$oregoomSubMenu->title.'</a>';
+
+                            }
+                        }
+
+                        if($subMenuExist == false){
+
+                            echo $menuPrincipal;
+
+                        } else {
+
+                            echo '<a class="nav-link dropdown-toggle" href="'.esc_url($oregoomMenu->url).'" id="navbarDropdown'.$idMenu.'" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>'.$inicioSubMenu.$subMenu.$finSubMenu;
+
+                            $inicioSubMenu = '';
+                            $finSubMenu = '';
+                            $subMenu = '';
+                        }             
+                        ?>
+                    </li>
+                    <?php            
+                }
+            }                    
+        }
     }
 }
 
