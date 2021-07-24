@@ -38,10 +38,7 @@
             padding: 3px 10px 3px 10px; 
             border-radius: 100px; 
             color: #fff; 
-            position: absolute;
-            top: 0; margin-top: 10px;
-            right: 0;
-            margin-right: 10px;
+            margin-left: 20px;
         }
         .hb-parrafo
         {
@@ -154,40 +151,58 @@
                 <?php  echo get_option('template_oregoom_adsense_google_amp_auto'); ?>
         <?php } ?>
         
-        
-        
-        
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
-            <div class="container pt-0 pb-0">
-                <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/historiasdelabiblia-logo-oficial-140x42.png">
-                </a>
-                <button class="navbar-toggler" on="tap:sidebar.toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
+                <div class="container pt-0 pb-0"><?php
 
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        
-                        <?php oregoom_navegation_menus(); ?>
-                        
-                    </ul>
-                </div>
+                    if ( has_custom_logo() ) {
+                        the_custom_logo();
+                    } else {
+                        echo get_bloginfo();
+                    } ?>
 
-                <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
-                    <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
-                        <img style="margin-top: 10px; margin-left: 50px;" src="<?php echo get_template_directory_uri(); ?>/historiasdelabiblia-logo-oficial-140x42.png">
-                    </a>
-                    <div class="navbar-collapse" style="padding: 10px 50px 10px 50px;">
+                    <button class="navbar-toggler" role="button" aria-label="open sidebar" on="tap:sidebar.toggle" tabindex="0"  type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            
+
                             <?php oregoom_navegation_menus(); ?>
+
+                        </ul>
+                    </div>
+
+                    <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
+                        
+                        <ul class="list-group border-bottom rounded-0">
+                            
+                            <li class="border-0 list-group-item d-flex justify-content-between align-items-center"><?php
+                            
+                                if ( has_custom_logo() ) {
+                                    the_custom_logo();
+                                } else {
+                                    echo get_bloginfo();
+                                } ?>
+                                
+                                <!--Botón de Close menú-->
+                                <span id="btn-sidebarclose" on="tap:sidebar.toggle" >X</span>
+                                
+                            </li>
                             
                         </ul>
-                        <!--Botón de Close menú-->
-                        <a id="btn-sidebarclose" on="tap:sidebar.toggle"><span>X</span></a>
-                    </div>
-                </amp-sidebar>
-            </div>
-        </nav>
+                        
+                        
+                        <div class="navbar-collapse pt-3 p-3">
+                            
+                            <ul class="navbar-nav">
+
+                                <?php oregoom_navegation_menus(); ?>
+
+                            </ul>
+                            
+                        </div>
+                    </amp-sidebar>
+                </div>
+            </nav>
+        </header>

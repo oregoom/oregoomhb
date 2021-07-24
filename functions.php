@@ -41,6 +41,12 @@ add_theme_support( 'post-thumbnails' );
 
 add_post_type_support( 'page', 'excerpt' );
 
+add_theme_support( 'custom-logo', array(
+		'height'      => 42,
+		'width'       => 140,
+		'flex-width' => false,
+	) );
+
 
 
 
