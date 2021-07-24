@@ -235,7 +235,7 @@
         
         
         <amp-lightbox id="my-search" layout="nodisplay">
-            <div class="lightbox shadow pb-4" tabindex="0">
+            <div class="lightbox shadow pb-2 pt-2" tabindex="0">
 
                  <!-- Vídeo de YouTube -->
                  <div class="container">
@@ -243,7 +243,7 @@
                         <span role="button" class="text-light h2 float-right text-dark" on="tap:my-search.close">&times;</span>
                     </div>
 
-                    <div class="text-center mb-3"><?php
+                    <div class="text-center mb-2"><?php
                         
                         if ( has_custom_logo() ) {
                             the_custom_logo();
@@ -253,8 +253,7 @@
                     </div>
                      
                      <?php get_search_form(); ?> 
-                     
-                     
+                                          
                 </div>
 
             </div>
