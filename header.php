@@ -153,17 +153,30 @@
         
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
-                <div class="container pt-0 pb-0"><?php
+                <div class="container pt-1 pb-1"><?php
 
                     if ( has_custom_logo() ) {
                         the_custom_logo();
                     } else {
                         echo get_bloginfo();
                     } ?>
-
-                    <button class="navbar-toggler" role="button" aria-label="open sidebar" on="tap:sidebar.toggle" tabindex="0"  type="button">
+                    
+<!--                    <button class="navbar-toggler" role="button" aria-label="open sidebar" on="tap:sidebar.toggle" tabindex="0"  type="button">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                    </button>-->
+
+                    <div class="d-lg-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search text-dark" viewBox="0 0 15 15">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                        </svg>
+                    </div>
+                    
+                    
+                    <div class="navbar-toggler rounded-circle p-3 mb-5 mr-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
+                        <span class="navbar-toggler-icon"></span>
+                    </div>
+                    
+                    
 
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
@@ -186,7 +199,7 @@
                                 } ?>
                                 
                                 <!--Botón de Close menú-->
-                                <span id="btn-sidebarclose" on="tap:sidebar.toggle" >X</span>
+                                <span id="btn-sidebarclose" on="tap:sidebar.close" >X</span>
                                 
                             </li>
                             
