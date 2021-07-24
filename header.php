@@ -22,9 +22,9 @@
                 /*background: rgba(0,0,0,.8);*/
                 background: #ffffff;
                 width: 100%;
-                /*height: 100%;*/
-                /*position: absolute;*/
-                /*display: flex;*/
+                height: 100%;
+                position: absolute;
+                display: flex;
                 /*align-items: center;*/
                 /*justify-content: center;*/
             }
@@ -235,12 +235,11 @@
         
         
         <amp-lightbox id="my-search" layout="nodisplay">
-            <div class="lightbox shadow pb-3" tabindex="0">
+            <div class="lightbox shadow pb-4" tabindex="0">
 
                  <!-- Vídeo de YouTube -->
                  <div class="container">
                      <div class="overflow-hidden">
-                        <!--<h5 class="text-light float-left">Alejandro Bullón</h5>-->
                         <span role="button" class="text-light h2 float-right text-dark" on="tap:my-search.close">&times;</span>
                     </div>
 
