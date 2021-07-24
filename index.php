@@ -41,7 +41,7 @@ if(have_posts()){
 
  <!-- Vídeo de HISTORIAS DE LA BIBLIA (Movil) -->
 <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ ?>
-    <div class="d-lg-none sticky-top">
+ <div class="d-lg-none sticky-top" style="z-index: 999;">
         <amp-youtube
             data-videoid="<?php echo get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>"
             layout="responsive"

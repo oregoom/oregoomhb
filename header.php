@@ -235,7 +235,7 @@
         
         
         <amp-lightbox id="my-search" layout="nodisplay">
-            <div class="lightbox shadow pb-2 pt-2" tabindex="0">
+            <div class="lightbox shadow pb-2 pt-2" tabindex="0" style="z-index: 1001;">
 
                  <!-- Vídeo de YouTube -->
                  <div class="container">
