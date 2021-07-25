@@ -174,7 +174,7 @@
         <?php } ?>
         
         <header>
-            <nav class="navbar navbar-expand-sm navbar-light bg-transparent shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
                 <div class="container pt-1 pb-1"><?php
 
                     if ( has_custom_logo() ) {

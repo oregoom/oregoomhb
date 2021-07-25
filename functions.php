@@ -60,6 +60,13 @@ add_theme_support( 'custom-logo', array(
 // Incluir Bootstrap JS y dependencia popper
 function bootstrap_js() {
           
+        // Incluir Bootstrap CSS 5.0 
+//        wp_enqueue_style( 'bootstrap_css', 
+//				'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', 
+//				array(), 
+//				'5.0'
+//				);
+        
         // Incluir Bootstrap CSS  
         wp_enqueue_style( 'bootstrap_css', 
 				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', 
