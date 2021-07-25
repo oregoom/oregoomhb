@@ -64,8 +64,9 @@ if(have_posts()){
 
                         </div>
                     </amp-lightbox>
-
-                    <div class="pb-3 text-center">
+                
+                    <!--AMP-->
+<!--                    <div class="pb-3 text-center">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>">
                     </div>
                 
@@ -73,6 +74,18 @@ if(have_posts()){
                         <button type="button" class="btn btn btn-block rounded-pill text-light" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>" style="background-color: #FA6002;">
                             Ver video
                         </button>
+                    </div>-->
+                
+                    <div class="pb-3 text-center">
+                        <a href="<?php echo home_url().'/videos/?v='.$ID_YouTube; ?>"  target="_blank">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid">
+                        </a>
+                    </div>
+                
+                    <div class="text-center mb-4">
+                        <a target="_blank" class="btn btn-block rounded-pill text-light" href="<?php echo home_url().'/videos/?v='.$ID_YouTube; ?>" style="background-color: #FA6002;">
+                            Ver video
+                        </a>
                     </div>
 
                 <?php } else {

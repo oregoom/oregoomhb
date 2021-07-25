@@ -16,7 +16,18 @@ if(have_posts()){
         
         $ID_YouTube = $_GET['v']; ?>
 
-        <div class="bg-dark">
+        <div class="bg-dark d-none d-sm-block">
+            <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
+                <amp-youtube
+                data-videoid="<?php echo $ID_YouTube; ?>"
+                layout="responsive"
+                width="480"
+                height="270"
+                ></amp-youtube>
+            </div>
+        </div>
+
+        <div class="bg-dark sticky-top d-sm-none">
             <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
                 <amp-youtube
                 data-videoid="<?php echo $ID_YouTube; ?>"
@@ -79,7 +90,7 @@ if(have_posts()){
                             'post_type' => array( 'post', 'page' ),
                             'post_status' => 'publish',
                             'orderby' => 'rand',
-                            'posts_per_page' => 32
+                            'posts_per_page' => 64
                             ));            
                     ?>
 
@@ -99,7 +110,7 @@ if(have_posts()){
                         
                         if( $ID_YouTube_video != "" ){ ?>
                             
-                            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
                                 <a href="<?php echo $URL_page; ?>?v=<?php echo $ID_YouTube_video; ?>">
                                     <?php the_post_thumbnail('post-thumbnail', array( 'class' => "img-fluid" )); ?>
                                 </a>
