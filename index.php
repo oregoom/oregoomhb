@@ -42,13 +42,13 @@ if(have_posts()){
                     
                     $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
                 
-                    <amp-lightbox id="my-lightbox-<?php echo $ID_YouTube; ?>" layout="nodisplay">
+<!--                    <amp-lightbox id="my-lightbox-<?php echo $ID_YouTube; ?>" layout="nodisplay">
                         <div class="lightbox-youtube" tabindex="0">
 
-                             <!-- Vídeo de YouTube -->
+                              Vídeo de YouTube 
                              <div class="container">
                                  <div class="overflow-hidden">
-                                    <!--<h5 class="text-light float-left">Alejandro Bullón</h5>-->
+                                    <h5 class="text-light float-left">Alejandro Bullón</h5>
                                     <span role="button" class="text-light h2 float-right" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>.close">&times;</span>
                                   </div>
 
@@ -63,7 +63,7 @@ if(have_posts()){
                             </div>
 
                         </div>
-                    </amp-lightbox>
+                    </amp-lightbox>-->
                 
                     <!--AMP-->
 <!--                    <div class="pb-3 text-center">

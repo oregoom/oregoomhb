@@ -68,6 +68,7 @@ function bootstrap_js() {
 //				);
         
         // Incluir Bootstrap CSS  
+    
         wp_enqueue_style( 'bootstrap_css', 
 				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', 
 				array(), 
