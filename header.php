@@ -10,11 +10,11 @@
 
         <!--<meta name="viewport" content="width=device-width">-->
 
-        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<!--        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
         <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
         <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
         <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-        <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+        <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>-->
 
         <style amp-custom>
 
@@ -27,6 +27,17 @@
                 display: flex;
                 /*align-items: center;*/
                 /*justify-content: center;*/
+            }
+            
+            .lightbox-youtube { 
+                /*background: rgba(0,0,0,.8);*/
+                background: rgba(0,0,0,.9);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
             p{
@@ -122,10 +133,11 @@
                     max-width: 80%!important;
                 }
             }
-
-
-
+            
         </style>
+        
+        
+        
 
         <?php wp_head(); ?>
 
@@ -162,7 +174,7 @@
         <?php } ?>
         
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
+            <nav class="navbar navbar-expand-sm navbar-light bg-transparent shadow-sm">
                 <div class="container pt-1 pb-1"><?php
 
                     if ( has_custom_logo() ) {
@@ -229,32 +241,35 @@
                     
                 </div>
             </nav>
+            
+            <!--Buscar en pantalla completa Movil-->
+            <amp-lightbox id="my-search" layout="nodisplay">
+                <div class="lightbox shadow pb-2 pt-2" tabindex="0" style="z-index: 1001;">
+
+                    <!-- Vídeo de YouTube -->
+                    <div class="container">
+                        
+                        <div class="overflow-hidden">
+                            <span role="button" class="text-light h2 float-right text-dark" on="tap:my-search.close">&times;</span>
+                        </div>
+
+                        <div class="text-center mb-2"><?php
+                            if ( has_custom_logo() ) {
+                                the_custom_logo();
+                            } else {
+                                echo get_bloginfo();
+                            } ?>
+                        </div>
+
+                        <?php get_search_form(); ?> 
+
+                    </div>
+
+                </div>
+            </amp-lightbox>
+            
         </header>
         
         
         
         
-        <amp-lightbox id="my-search" layout="nodisplay">
-            <div class="lightbox shadow pb-2 pt-2" tabindex="0" style="z-index: 1001;">
-
-                 <!-- Vídeo de YouTube -->
-                 <div class="container">
-                     <div class="overflow-hidden">
-                        <span role="button" class="text-light h2 float-right text-dark" on="tap:my-search.close">&times;</span>
-                    </div>
-
-                    <div class="text-center mb-2"><?php
-                        
-                        if ( has_custom_logo() ) {
-                            the_custom_logo();
-                        } else {
-                            echo get_bloginfo();
-                        } ?>
-                    </div>
-                     
-                     <?php get_search_form(); ?> 
-                                          
-                </div>
-
-            </div>
-        </amp-lightbox>
