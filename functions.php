@@ -27,7 +27,7 @@
      }
      return $transient;
  }
- add_filter( 'pre_set_site_transient_update_themes', 'geko_check_update' );
+// add_filter( 'pre_set_site_transient_update_themes', 'geko_check_update' );
  
  
  
@@ -69,18 +69,25 @@ function bootstrap_js() {
         
         // Incluir Bootstrap CSS  
     
-        wp_enqueue_style( 'bootstrap_css', 
-				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', 
-				array(), 
-				'4.5'
-				);
+//        wp_enqueue_style( 'bootstrap_css', 
+//				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', 
+//				array(), 
+//				'4.5'
+//				);
+        
+        
+        // Incluir Bootstrap CSS 5.1.0
+//        wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap-5.1.0/css/bootstrap.min.css'), 
+//				array(), 
+//				'5.1.0'
+//				);
         
         
         // Incluir Bootstrap CSS 4.4.1
-//        wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap.4.4.1/css/bootstrap.min.css'), 
-//				array(), 
-//				'4.4.1'
-//				);
+        wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap.4.4.1/css/bootstrap.min.css'), 
+				array(), 
+				'4.4.1'
+				);
 
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap_js');
@@ -293,6 +300,25 @@ function google_adsense_content_page_menu(){
                     
                     
                     
+                    <!--CODE ADSENSE (300x600)-->
+                    <tr>
+                        <th scope="row">
+                            <label for="template_oregoom_adsense_160_600">Code AdSense (160x600)</label>
+                        </th>
+                        <td>
+                            
+                            <textarea name="template_oregoom_adsense_160_600" id="template-oregoom-adsense-160-600" style="min-height: 124px; width: 100%;"><?php echo esc_textarea(get_option('template_oregoom_adsense_160_600')); ?></textarea>
+                            <p class="description">Este formato, también denominado "rectángulo mediano", suele ofrecer un 
+                                mayor inventario de anuncios de anunciantes, lo que puede aumentar los ingresos si se 
+                                habilitan tanto los anuncios de texto como los anuncios de imagen.</p>
+                            <p class="description">Ofrece un buen rendimiento cuando se inserta en contenido de 
+                                texto o al final de los artículos.</p>
+                            <p class="description"><strong>NOTA:</strong> Opción recomendada para móviles</p>
+                        </td>                        
+                    </tr> 
+                    
+                    
+                    
                     
                     <!--CODE ADSENSE (Google AMP Auto)-->
                     <tr>
@@ -337,6 +363,7 @@ function template_oregoom_register_options_admin_page() {
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_300_250');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_728_90');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_300_600');
+    register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_160_600');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_google_amp_auto');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_google_analytics');
     

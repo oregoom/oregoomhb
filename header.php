@@ -173,9 +173,12 @@
                 <?php  echo get_option('template_oregoom_adsense_google_amp_auto'); ?>
         <?php } ?>
         
+        
+        
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
-                <div class="container pt-1 pb-1"><?php
+            
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container"><?php
 
                     if ( has_custom_logo() ) {
                         the_custom_logo();
@@ -190,23 +193,21 @@
                     </div>
                     
                     
-                    
-                    
-                    
-                    
-                    <div class="navbar-toggler rounded-circle p-3 mb-5 mr-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
+                    <!--Menú movil-->
+                    <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
                         <span class="navbar-toggler-icon"></span>
                     </div>
                     
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">                      
 
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
 
                             <?php oregoom_navegation_menus(); ?>
 
                         </ul>
-                    </div>
 
+                    </div>
+                    
                     <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
                         
                         <ul class="list-group border-bottom rounded-0">
@@ -240,7 +241,7 @@
                     </amp-sidebar>
                     
                 </div>
-            </nav>
+            </nav>            
             
             <!--Buscar en pantalla completa Movil-->
             <amp-lightbox id="my-search" layout="nodisplay">

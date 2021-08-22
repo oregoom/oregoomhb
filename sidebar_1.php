@@ -3,7 +3,7 @@
 
 <!-- Google AdSense 300x250 --->
 <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-    <div class="pb-4 text-center">
+    <div class="pb-4 mb-4 text-center">
 
         <?php echo get_option('template_oregoom_adsense_300_250'); ?>
 
@@ -29,7 +29,7 @@
                 while($AT_query->have_posts()) : $AT_query->the_post(); ?>
 
                     <li class="list-group-item list-group-item-action bg-transparent">
-                        <a href="<?php the_permalink(); ?>" class="text-white"><span class="text-dark"><?php the_title(); ?></span></a>
+                        <a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a>
                     </li>
 
                 <?php endwhile;;
@@ -59,7 +59,7 @@
                 while($NT_query->have_posts()) : $NT_query->the_post(); ?>
 
                     <li class="list-group-item list-group-item-action bg-transparent">
-                        <a href="<?php the_permalink(); ?>" class="text-white"><span class="text-dark"><?php the_title(); ?></span></a>
+                        <a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a>
                     </li>
 
                 <?php endwhile;;

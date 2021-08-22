@@ -154,63 +154,6 @@ if(have_posts()){
                     </div>
                 </div>
                 
-                
-                <h3 class="pt-2 h4" style="font-family: Raleway, sans-serif;">
-                    <strong>Más historias</strong>
-                </h3>
-                
-                <div class="row pt-3 pb-3">
-
-                        <?php 
-                        //Post que no deben de mostrar en la consulta
-                        $NOT_post[] = get_the_ID();
-
-                        //Consulta que pertenece a una categoria específica 
-                        $hb_query_1 = new WP_Query( array( 
-                                'cat' => $ID_cat,
-                                'orderby' => 'rand',
-                                'post_status' => 'publish',
-                                'posts_per_page' => 3,
-                                'post__not_in' => $NOT_post
-                            ));   
-
-                        while ($hb_query_1->have_posts()) : $hb_query_1->the_post(); 
-
-                            if(has_post_thumbnail()){ $NOT_post[] = get_the_ID(); ?>
-
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 pb-3"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a></div>
-
-                            <?php }                    
-
-                        endwhile;
-
-                        wp_reset_postdata(); ?>
-
-                        <?php 
-                        //Consulta general
-                        $hb_query_2 = new WP_Query( array( 
-                                'orderby' => 'rand',
-                                'post_status' => 'publish',
-                                'posts_per_page' => 3,
-                                'post__not_in' => $NOT_post
-                            ));   
-
-                        while ($hb_query_2->have_posts()) : $hb_query_2->the_post(); 
-
-                            if(has_post_thumbnail()){ ?>
-
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 pb-3">
-                                <a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a>
-                            </div>
-
-                            <?php }                    
-
-                        endwhile;
-
-                        wp_reset_postdata(); ?>
-
-                </div>
-                
             </article> 
             
             <aside class="col-xl-4 col-lg-5">    
@@ -220,6 +163,68 @@ if(have_posts()){
             </aside>
             
         </div>    
+    
+    <div class="border-top pt-3 mb-5">
+        
+        <h3 class="pt-2 h4" style="font-family: Raleway, sans-serif;">
+
+            <strong>Más historias</strong>
+
+        </h3>
+
+        <div class="row pt-3 pb-3">
+
+                <?php 
+                //Post que no deben de mostrar en la consulta
+                $NOT_post[] = get_the_ID();
+
+                //Consulta que pertenece a una categoria específica 
+                $hb_query_1 = new WP_Query( array( 
+                        'cat' => $ID_cat,
+                        'orderby' => 'rand',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 3,
+                        'post__not_in' => $NOT_post
+                    ));   
+
+                while ($hb_query_1->have_posts()) : $hb_query_1->the_post(); 
+
+                    if(has_post_thumbnail()){ $NOT_post[] = get_the_ID(); ?>
+
+                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 pb-3"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a></div>
+
+                    <?php }                    
+
+                endwhile;
+
+                wp_reset_postdata(); ?>
+
+                <?php 
+                //Consulta general
+                $hb_query_2 = new WP_Query( array( 
+                        'orderby' => 'rand',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 3,
+                        'post__not_in' => $NOT_post
+                    ));   
+
+                while ($hb_query_2->have_posts()) : $hb_query_2->the_post(); 
+
+                    if(has_post_thumbnail()){ ?>
+
+                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 pb-3">
+                        <a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a>
+                    </div>
+
+                    <?php }                    
+
+                endwhile;
+
+                wp_reset_postdata(); ?>
+
+        </div>
+        
+    </div>
     
 </div>
 
