@@ -34,7 +34,7 @@ if(have_posts()){
     
         <div class="row">
             
-            <article class="col-xl-8 col-lg-7">
+            <article class="col-xl-8 col-lg-8">
                 
                 
                 <!-- Vídeo de YouTube (Escritorio) -->
@@ -156,7 +156,7 @@ if(have_posts()){
                 
             </article> 
             
-            <aside class="col-xl-4 col-lg-5">    
+            <aside class="col-xl-4 col-lg-4">    
                 
                 <?php get_sidebar();?> 
                 
