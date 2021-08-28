@@ -11,34 +11,34 @@ if(have_posts()){
     while(have_posts()) : the_post(); 
     
         $URL_page = get_permalink();
-       
-    if (isset($_GET['v'])) {
         
-        $ID_YouTube = $_GET['v']; ?>
+        if (isset($_GET['v'])) {
+        
+            $ID_YouTube = $_GET['v']; ?>
 
-        <div class="bg-dark d-none d-sm-block">
-            <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
-                <amp-youtube
-                data-videoid="<?php echo $ID_YouTube; ?>"
-                layout="responsive"
-                width="480"
-                height="270"
-                ></amp-youtube>
+            <div class="bg-dark d-none d-sm-block">
+                <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
+                    <amp-youtube
+                    data-videoid="<?php echo $ID_YouTube; ?>"
+                    layout="responsive"
+                    width="480"
+                    height="270"
+                    ></amp-youtube>
+                </div>
             </div>
-        </div>
 
-        <div class="bg-dark sticky-top d-sm-none">
-            <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
-                <amp-youtube
-                data-videoid="<?php echo $ID_YouTube; ?>"
-                layout="responsive"
-                width="480"
-                height="270"
-                ></amp-youtube>
-            </div>
-        </div><?php
+            <div class="bg-dark sticky-top d-sm-none">
+                <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
+                    <amp-youtube
+                    data-videoid="<?php echo $ID_YouTube; ?>"
+                    layout="responsive"
+                    width="480"
+                    height="270"
+                    ></amp-youtube>
+                </div>
+            </div><?php
 
-    } ?>
+        } ?>
 
 
 

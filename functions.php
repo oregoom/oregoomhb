@@ -27,7 +27,7 @@
      }
      return $transient;
  }
-// add_filter( 'pre_set_site_transient_update_themes', 'geko_check_update' );
+ add_filter( 'pre_set_site_transient_update_themes', 'geko_check_update' );
  
  
  
@@ -66,14 +66,14 @@ function bootstrap_js() {
 //				array(), 
 //				'5.0'
 //				);
+
         
-        // Incluir Bootstrap CSS  
-    
-//        wp_enqueue_style( 'bootstrap_css', 
-//				'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', 
-//				array(), 
-//				'4.5'
-//				);
+        // Incluir Bootstrap CSS 4.6.0    
+        wp_enqueue_style( 'bootstrap_css', 
+				'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', 
+				array(), 
+				'4.6.0'
+				);
         
         
         // Incluir Bootstrap CSS 5.1.0
@@ -84,10 +84,10 @@ function bootstrap_js() {
         
         
         // Incluir Bootstrap CSS 4.4.1
-        wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap.4.4.1/css/bootstrap.min.css'), 
-				array(), 
-				'4.4.1'
-				);
+        //wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap.4.4.1/css/bootstrap.min.css'), 
+		//		array(), 
+		//		'4.4.1'
+		//		);
 
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap_js');

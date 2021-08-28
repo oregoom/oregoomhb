@@ -4,7 +4,43 @@
 
 if(have_posts()){
     
-    while(have_posts()) : the_post(); ?>  
+    while(have_posts()) : the_post(); 
+        
+        /*
+        * Para mostrar videos en PC y Movil
+        */
+
+        if (isset($_GET['v'])) {
+            
+            $ID_YouTube = $_GET['v']; ?>
+
+            <!--<div class="bg-dark d-none d-sm-block">-->
+            <div class="bg-dark">
+                <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
+                    <amp-youtube
+                    data-videoid="<?php echo $ID_YouTube; ?>"
+                    layout="responsive"
+                    width="480"
+                    height="270"
+                    ></amp-youtube>
+                </div>
+            </div>
+
+            <!--<div class="bg-dark sticky-top d-sm-none">
+                <div class="container-lg container-fluid p-0">
+                    <amp-youtube
+                    data-videoid="<?php echo $ID_YouTube; ?>"
+                    layout="responsive"
+                    width="480"
+                    height="270"
+                    ></amp-youtube>
+                </div>
+            </div>--><?php
+
+        } ?> 
+        
+        
+
 
 <div class="d-none d-lg-block pb-0 mb-0">
     
@@ -34,73 +70,41 @@ if(have_posts()){
     
         <div class="row">
             
-            <article class="col-xl-8 col-lg-8">
+            <article class="col-xl-8 col-lg-8"><?php
                 
-                
-                <!-- Vídeo de YouTube (Escritorio) -->
-                <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
-                    
-                    $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
-                
-<!--                    <amp-lightbox id="my-lightbox-<?php echo $ID_YouTube; ?>" layout="nodisplay">
-                        <div class="lightbox-youtube" tabindex="0">
+                if (!isset($_GET['v'])) { ?>
 
-                              Vídeo de YouTube 
-                             <div class="container">
-                                 <div class="overflow-hidden">
-                                    <h5 class="text-light float-left">Alejandro Bullón</h5>
-                                    <span role="button" class="text-light h2 float-right" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>.close">&times;</span>
-                                  </div>
-
-                                  <div class="">
-                                    <amp-youtube
-                                    data-videoid="<?php echo $ID_YouTube; ?>"
-                                    layout="responsive"
-                                    width="480"
-                                    height="270"
-                                    ></amp-youtube>
-                                  </div>
-                            </div>
-
+                    <!-- Vídeo de YouTube (Escritorio) -->
+                    <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
+                        
+                        $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
+                                    
+                        <div class="pb-3 text-center">
+                            <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid">
+                            </a>
                         </div>
-                    </amp-lightbox>-->
-                
-                    <!--AMP-->
-<!--                    <div class="pb-3 text-center">
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>">
-                    </div>
-                
-                    <div class="text-center mb-4">
-                        <button type="button" class="btn btn btn-block rounded-pill text-light" on="tap:my-lightbox-<?php echo $ID_YouTube; ?>" style="background-color: #FA6002;">
-                            Ver video
-                        </button>
-                    </div>-->
-                
-                    <div class="pb-3 text-center">
-                        <a href="<?php echo home_url().'/videos/?v='.$ID_YouTube; ?>"  target="_blank">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid">
-                        </a>
-                    </div>
-                
-                    <div class="text-center mb-4">
-                        <a target="_blank" class="btn btn-block rounded-pill text-light" href="<?php echo home_url().'/videos/?v='.$ID_YouTube; ?>" style="background-color: #FA6002;">
-                            Ver video
-                        </a>
-                    </div>
-
-                <?php } else {
                     
-                    //IMG destacada de POST
-                    if( has_post_thumbnail() ) {
+                        <div class="text-center mb-4">
+                            <a target="_self" class="btn btn-block rounded-pill text-light" href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>" style="background-color: #FA6002;">
+                                Ver video
+                            </a>
+                        </div>
 
-                        the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4' )); 
+                    <?php } else {
+                        
+                        //IMG destacada de POST
+                        if( has_post_thumbnail() ) {
 
-                    } 
-                    
+                            the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4' )); 
+
+                        } 
+                        
+                    }
                 } ?>
                 
                 
-                <h1 class="pb-4 mt-lg-5 mt-4 h2 text-lg-left text-center"><strong> <?php the_title(); ?> </strong></h1>
+                <h1 class="pb-4 mt-lg-4 mt-4 h2 text-center"><strong> <?php the_title(); ?> </strong></h1>
                 
                 
                 <!--//GOOGLE ADSENSE (Movil) -->
@@ -115,8 +119,7 @@ if(have_posts()){
                 
                 <div class="pb-4">
                     <?php the_content(); ?> 
-                </div>
-                              
+                </div>                              
                 
                 
                 <!-- COMPARTIR en Redes Sociales -->
