@@ -5,8 +5,8 @@
         <!--<script async src="https://cdn.ampproject.org/v0.js"></script>-->
         <title><?php wp_title(); ?></title>
 
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">-->
 
         <!--<meta name="viewport" content="width=device-width">-->
 

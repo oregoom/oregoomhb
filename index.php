@@ -13,8 +13,7 @@ if(have_posts()){
         if (isset($_GET['v'])) {
             
             $ID_YouTube = $_GET['v']; ?>
-
-            <!--<div class="bg-dark d-none d-sm-block">-->
+            
             <div class="bg-dark">
                 <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
                     <amp-youtube
@@ -24,18 +23,7 @@ if(have_posts()){
                     height="270"
                     ></amp-youtube>
                 </div>
-            </div>
-
-            <!--<div class="bg-dark sticky-top d-sm-none">
-                <div class="container-lg container-fluid p-0">
-                    <amp-youtube
-                    data-videoid="<?php echo $ID_YouTube; ?>"
-                    layout="responsive"
-                    width="480"
-                    height="270"
-                    ></amp-youtube>
-                </div>
-            </div>--><?php
+            </div><?php
 
         } ?> 
         
@@ -186,7 +174,7 @@ if(have_posts()){
                         'cat' => $ID_cat,
                         'orderby' => 'rand',
                         'post_status' => 'publish',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 4,
                         'post__not_in' => $NOT_post
                     ));   
 
@@ -207,7 +195,7 @@ if(have_posts()){
                 $hb_query_2 = new WP_Query( array( 
                         'orderby' => 'rand',
                         'post_status' => 'publish',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 8,
                         'post__not_in' => $NOT_post
                     ));   
 
