@@ -5,34 +5,68 @@
                 
     if (!isset($_GET['v'])) { ?>
 
-        <!-- Vídeo de YouTube (Escritorio) -->
-        <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
-            
-            $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
-            
-            <div class="mb-4 mb-lg-5">
-            
-                <div class="text-center">
+        <!-- ID Vídeo de YouTube -->
 
-                    <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
+        <?php if(is_single()){ ?>
 
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid rounded shadow-sm ml-lg-5 mr-lg-5">
+            <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
+                
+                $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
+                
+                <div class="mb-4 mb-lg-5">
+                
+                    <div class="text-center">
 
-                    </a>
-                    
+                        <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
+
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid rounded shadow-sm ml-lg-5 mr-lg-5">
+
+                        </a>
+                        
+                    </div>
+
                 </div>
 
-            </div>
+            <?php } else {
+                
+                //IMG destacada de POST
+                if( has_post_thumbnail() ) {
 
-        <?php } else {
+                    the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 rounded shadow-sm ml-lg-5 mr-lg-5' )); 
+
+                } 
+            }
             
-            //IMG destacada de POST
-            if( has_post_thumbnail() ) {
+        } else {
 
-                the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 rounded shadow-sm ml-lg-5 mr-lg-5' )); 
+            if(get_post_meta(get_the_ID(), 'hb_idyoutube_page', true)){ 
+                
+                $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_page', true); ?>
+                
+                <div class="mb-4 mb-lg-5">
+                
+                    <div class="text-center">
 
-            } 
-            
+                        <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
+
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid rounded shadow-sm ml-lg-5 mr-lg-5">
+
+                        </a>
+                        
+                    </div>
+
+                </div>
+
+            <?php } else {
+                
+                //IMG destacada de POST
+                if( has_post_thumbnail() ) {
+
+                    the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 rounded shadow-sm ml-lg-5 mr-lg-5' )); 
+
+                } 
+            }
+
         }
 
     } ?>
@@ -45,19 +79,23 @@
             <h1 class="pb-3 text-center h2"><strong> <?php the_title(); ?> </strong></h1>
 
             
-            <?php if (!isset($_GET['v'])) { ?>
+            <?php if (!isset($_GET['v'])) { 
+                
+                if(isset($ID_YouTube)){ ?>
 
-                <div class="text-center mb-3">
+                    <div class="text-center mb-3">
 
-                    <a target="_self" class="btn btn-warning rounded-pill shadow-sm pl-5 pr-5" href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>">
+                        <a target="_self" class="btn btn-warning rounded-pill shadow-sm pl-5 pr-5" href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>">
 
-                        Ver video
+                            Ver video
 
-                    </a>
+                        </a>
 
-                </div>
-            
-            <?php } ?>
+                    </div><?php 
+
+                }
+                
+            } ?>
 
             
             <div class="pt-lg-3 pb-5">
