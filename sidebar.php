@@ -2,13 +2,13 @@
 
 
 <!-- Google AdSense 300x250 --->
-<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+<!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
     <div class="pb-4 text-center">
 
         <?php echo get_option('template_oregoom_adsense_300_250'); ?>
 
     </div>
-<?php } ?>
+<?php } ?>-->
 
 
         

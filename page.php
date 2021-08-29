@@ -18,38 +18,35 @@ if(have_posts()){
 </div>
 
 
+<div class="container bg-white pb-5 pt-2 pt-lg-0"><?php    
+    
+    //IMG destacada de POST
+    if( has_post_thumbnail() ) {
 
-<div class="container bg-white pb-5">
+        the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 rounded shadow-sm ml-lg-5 mr-lg-5' )); 
+
+    } ?>
     
         <div class="row">
             
-            <article class="col-xl-8 col-lg-7">
-
-            <?php
-    
-            //IMG destacada de POST
-            if( has_post_thumbnail() ) {
-
-                the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 rounded shadow-sm' )); 
-
-            } ?>
+            <article class="col-xl-8 col-lg-8">            
                 
                 <h1 class="pb-4 text-center"><strong> <?php the_title(); ?> </strong></h1>
                 
                 <!--//GOOGLE ADSENSE (Movil) -->
-                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
+                <!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
                     <div class="pb-4 text-center d-lg-none">
                         
                         <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
                         
                     </div>                
-                <?php } ?>
-                
-                
+                <?php } ?>-->
                 
                 <?php $ID_post = get_the_ID(); ?>                
                 
-                <?php the_content(); ?>    
+                <div class="pt-1 pt-lg-3 pb-5">        
+                    <?php the_content(); ?>                    
+                </div>     
                 
                 <?php
                     $id_cat_page = get_post_meta($ID_post, 'hb_cat_page', true);
@@ -99,7 +96,7 @@ if(have_posts()){
                     }
                 ?>
             </article>  
-            <aside class="col-xl-4 col-lg-5">            
+            <aside class="col-xl-4 col-lg-4">            
                 <?php get_sidebar();?>            
             </aside>
             
