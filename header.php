@@ -84,6 +84,10 @@
                 background-size: cover, 100%;
             }
 
+            #img-bg-post-index{
+                background:linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+            }
+
             #img-bg-search{
                 height: 270px;
                 background:linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),  url(<?php echo get_the_post_thumbnail_url(); ?>);

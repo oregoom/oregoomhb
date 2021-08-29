@@ -14,7 +14,7 @@ if(have_posts()){
             
             $ID_YouTube = $_GET['v']; ?>
 
-            <div class="bg-dark">
+            <div class="bg-dark mb-3 mb-lg-0">
                 <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
                     <amp-youtube
                     data-videoid="<?php echo $ID_YouTube; ?>"
@@ -54,59 +54,63 @@ if(have_posts()){
 </div>
 
 
-<div class="container bg-white pb-5">     
-    
+<div class="container pb-5 pt-2 pt-lg-0"><?php
+                
+    if (!isset($_GET['v'])) { ?>
+
+        <!-- Vídeo de YouTube (Escritorio) -->
+        <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
+            
+            $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
+            
+            <div class="mb-4 mb-lg-5">
+            
+                <div class="text-center">
+                    <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid rounded shadow-sm ml-lg-5 mr-lg-5">
+                    </a>
+                </div>
+
+            </div>
+
+        <?php } else {
+            
+            //IMG destacada de POST
+            if( has_post_thumbnail() ) {
+
+                the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 rounded shadow-sm ml-lg-5 mr-lg-5' )); 
+
+            } 
+            
+        }
+
+    } ?>
+
+
         <div class="row">
             
-            <article class="col-xl-8 col-lg-8"><?php
+            <article class="col-xl-8 col-lg-8">                
                 
-                if (!isset($_GET['v'])) { ?>
-
-                    <!-- Vídeo de YouTube (Escritorio) -->
-                    <?php if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){ 
-                        
-                        $ID_YouTube = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
-                                    
-                        <div class="pb-3 text-center">
-                            <a href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>"  target="_self">
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid">
-                            </a>
-                        </div>
-                    
-                        <div class="text-center mb-4">
-                            <a target="_self" class="btn btn-block rounded-pill text-light" href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>" style="background-color: #FA6002;">
-                                Ver video
-                            </a>
-                        </div>
-
-                    <?php } else {
-                        
-                        //IMG destacada de POST
-                        if( has_post_thumbnail() ) {
-
-                            the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4' )); 
-
-                        } 
-                        
-                    }
-                } ?>
-                
-                
-                <h1 class="pb-4 mt-lg-4 mt-4 h2 text-center"><strong> <?php the_title(); ?> </strong></h1>
-                
-                
-                <!--//GOOGLE ADSENSE (Movil) -->
-                <!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
-                    <div class="pb-4 text-center d-lg-none">
-                        
-                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
-                        
-                    </div>                
-                <?php } ?>-->
+                <h1 class="pb-3 text-center h2"><strong> <?php the_title(); ?> </strong></h1>
 
                 
-                <div class="pb-4">
+                <?php if (!isset($_GET['v'])) { ?>
+
+                    <div class="text-center mb-3">
+
+                        <a target="_self" class="btn btn-warning rounded-pill shadow-sm pl-5 pr-5" href="<?php echo get_permalink().'?v='.$ID_YouTube; ?>">
+                            Ver video
+                        </a>
+
+                    </div>
+                
+                <?php } ?>
+
+                
+                <div class="pt-lg-3 pb-5">
+
                     <?php the_content(); ?> 
+
                 </div>                              
                 
                 
