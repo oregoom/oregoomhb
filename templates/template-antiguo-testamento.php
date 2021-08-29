@@ -20,31 +20,27 @@ if(have_posts()){
     
 </div>
 
-<div class="container bg-white pt-lg-5 pt-4 pb-5 mt-lg-n5" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+<div class="container bg-white pt-lg-5 pt-4 pb-5">
     
-    <article class="container">
-                       
+    <article class="">
                 
+        <h1 class="pb-4 text-center" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
+
         <!--//GOOGLE ADSENSE 728x90 (PC) -->
         <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>   
 
-            <div class="mb-4 mb-lg-5 text-center d-none d-lg-block">                        
+            <div class="mb-4 text-center d-none d-lg-block">                        
                 <?php echo get_option('template_oregoom_adsense_728_90'); ?>                        
             </div> 
 
         <?php } ?>
-            
-        
-        
-        <h1 class="pb-2 text-center" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
-        
         
         <!--//GOOGLE ADSENSE 300x250 (Movil) -->
-        <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
+        <!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
             <div class="text-center d-lg-none">                        
                 <?php  echo get_option('template_oregoom_adsense_300_250'); ?>                        
             </div>                
-        <?php } ?>
+        <?php } ?>-->
         
         
         
