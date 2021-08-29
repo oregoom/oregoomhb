@@ -76,7 +76,7 @@
 <!--//GOOGLE ADSENSE (PC) -->
 <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
 
-    <div class="card shadow pb-4 pt-4 mb-4 d-none d-lg-block text-center bg-dark sticky-top" style="border: none; border-top: 3px solid #FA6002; background: rgba(250, 96, 2, 0.04);">
+    <div class="pb-4 mb-4 text-center sticky-top d-none d-xl-block">
 
         <?php echo get_option('template_oregoom_adsense_300_600'); ?>
 

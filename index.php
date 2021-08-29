@@ -13,7 +13,7 @@ if(have_posts()){
         if (isset($_GET['v'])) {
             
             $ID_YouTube = $_GET['v']; ?>
-            
+
             <div class="bg-dark">
                 <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
                     <amp-youtube
@@ -147,7 +147,18 @@ if(have_posts()){
                 
             </article> 
             
-            <aside class="col-xl-4 col-lg-4">    
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
+
+            <div class="col pb-4 mb-4 text-center d-lg-none">
+
+                <?php echo get_option('template_oregoom_adsense_300_600'); ?>
+
+            </div>
+
+            <?php } ?>
+
+            <aside class="col-xl-4 col-lg-4 d-none d-lg-block">    
                 
                 <?php get_sidebar();?> 
                 
@@ -182,7 +193,7 @@ if(have_posts()){
 
                     if(has_post_thumbnail()){ $NOT_post[] = get_the_ID(); ?>
 
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 pb-3"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a></div>
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 pb-3"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a></div>
 
                     <?php }                    
 
@@ -203,7 +214,7 @@ if(have_posts()){
 
                     if(has_post_thumbnail()){ ?>
 
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 pb-3">
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 pb-3">
                         <a class="text-dark" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><h3 class="h6 pt-2" style="font-family: Raleway, sans-serif;"><strong><?php the_title(); ?></strong></h3></a>
                     </div>
 
