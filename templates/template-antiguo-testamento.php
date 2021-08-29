@@ -10,7 +10,7 @@ if(have_posts()){
     
     while(have_posts()) : the_post(); ?>   
 
-<div class="d-none d-lg-block container-fluid pb-0 mb-0">
+<!--<div class="d-none d-lg-block container-fluid pb-0 mb-0">
     
     <nav aria-label="breadcrumb" class="container d-none d-lg-block">
 
@@ -21,20 +21,27 @@ if(have_posts()){
 
     </nav>
     
-</div>
+</div>-->
     
-<article class="container bg-white pb-5 pt-2 pt-lg-0"><?php
+<article class="container pb-5 pt-4 pt-lg-5"><?php
 
     //IMG destacada de POST
-    if( has_post_thumbnail() ) {
+    //if( has_post_thumbnail() ) {
 
-        the_post_thumbnail('full', array( 'class' => 'img-fluid rounded mb-4 mb-lg-5 ml-lg-5 mr-lg-5' )); 
+      //  the_post_thumbnail('full', array( 'class' => 'img-fluid rounded mb-4 mb-lg-5 ml-lg-5 mr-lg-5' )); 
 
-    } ?>
+    //} ?>
             
-    <h1 class="pb-4 text-center" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
+    <h1 class="text-center h2 border-bottom pb-3" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
+
+    <!--//GOOGLE ADSENSE 728x90 (PC) -->
+    <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>                
+        <div class="pt-2 text-center d-none d-lg-block">                        
+            <?php echo get_option('template_oregoom_adsense_728_90'); ?>                        
+        </div>                
+    <?php } ?>
     
-    <div class="pt-1 pt-lg-3 pb-5">
+    <div class="pt-3 pt-lg-4 pb-5">
         
         <?php the_content(); ?>
         
