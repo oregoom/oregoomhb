@@ -20,17 +20,17 @@ if(have_posts()){
         
         
         
-        <section class="container pt-0 mt-0 mb-0 pb-2 pt-lg-4 mt-lg-4 mb-lg-5 pb-lg-5">
+        <section class="container pt-0 mt-0 mb-0 pb-2 pt-lg-4 mt-lg-4 pb-lg-5">
             
-            <h1 class="pt-4 pt-lg-5 pb-2 text-center" style="font-family: 'Salsa'; font-weight: 600; font-size: 50px;"><span style="color: #f76300;">Historias</span> de la Biblia<?php // the_title(); ?></h1>
+            <h1 class="pt-4 pb-2 text-center" style="font-family: 'Salsa'; font-weight: 600; font-size: 50px;"><span style="color: #f76300;">Historias</span> de la Biblia<?php // the_title(); ?></h1>
             
             <div class="ml-auto mr-auto" id="get_search" style="max-width: 60%;">
                 <?php get_search_form(); ?>            
             </div>
             
             <div class="mt-3 text-center d-none d-md-block">
-                <a href="https://historiasdelabiblia.org/antiguo-testamento/" class="btn btn-light shadow-sm mr-2">Antiguo Testamento</a>
-                <a href="https://historiasdelabiblia.org/nuevo-testamento/" class="btn btn-light shadow-sm ml-2">Nuevo Testamento</a>
+                <a href="https://historiasdelabiblia.org/antiguo-testamento/" class="btn btn-dark shadow-sm mr-2">Antiguo Testamento</a>
+                <a href="https://historiasdelabiblia.org/nuevo-testamento/" class="btn btn btn-dark shadow-sm ml-2">Nuevo Testamento</a>
             </div>
             
             <div class="mt-3 mb-3 text-center">
@@ -51,26 +51,13 @@ if(have_posts()){
                 
             </div>
             
-            <div class="mb-lg-5 text-center">
+            <div class="text-center mt-4">
                 
                 <p><strong>Bienvenido</strong> a nuestra página web <strong>historiasdelabiblia.org</strong>, en donde podrás encontrar las Mejores y Grandes <strong>HISTORIAS de la BIBLIA</strong>, para Adultos, Jóvenes y Niños completamente ilustradas para leer.</p>
 
-            </div>
-            
-        </section>
-        
-        
-        
-        
-        
-        <section class="pt-1 pt-lg-5 pb-lg-5" style="background-color: rgba(250, 96, 2, 0.04);">
-            
-            <div class="container">
-            
-                <h2 class="h3 text-center text-uppercase mt-4 mb-4 mt-lg-5 mb-lg-5" style="font-size: 25px!important; font-weight: 400!important; font-family: 'Salsa', cursive;">Las Mejores <span style="color: #f76300;">HISTORIAS</span> de la BIBLIA para leer</h2>
+                <!--<p>Las mejores historias de la Biblia para Leer</p>-->
 
-
-                <div class="row mt-4">
+                <div class="row mt-4 pt-1">
 
                     <?php            
                     $query_home_hb = new WP_Query( array (
@@ -84,7 +71,7 @@ if(have_posts()){
                                                     'value'   => array( 'AT', 'NT' ),
                                                 ),
                                             ),
-                            'posts_per_page' => 6
+                            'posts_per_page' => 12
                             ));            
                     ?>
 
@@ -92,10 +79,10 @@ if(have_posts()){
 
                     <?php while($query_home_hb->have_posts()) : $query_home_hb->the_post(); ?>
 
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                             <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-top']); ?>
-                                <!--<img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2020/06/historia-del-arca-noe.jpg">-->
+                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded shadow']); ?>
+                                <!--<img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2021/04/historias-de-lot.jpg">-->
                             </a>
 
                             <div class="pt-2 pb-3 text-center" style="line-height: 1em; font-family: Raleway, sans-serif;">
@@ -112,14 +99,14 @@ if(have_posts()){
                     <?php } ?>
 
                 </div>
-            
+
             </div>
-                        
+            
         </section>
         
         
         
-        <section class="container pt-4 pb-4 pt-lg-5 pb-lg-5">
+        <section class="container pb-4">
             
             <h2 class="h4 pt-4 pb-2 mb-3 text-center" style="color: #FD6003; border-bottom: 1px solid #FD6003; font-weight: 400!important; font-size: 24px!important; font-family: 'Lobster',cursive!important;">Comparte con tus amigos</h2>
             
@@ -137,9 +124,7 @@ if(have_posts()){
                 </span>    
             </div>
             
-        </section>
-        
-           
+        </section> 
                 
         <section class="container pt-4 pb-4 mb-4 pt-lg-5 pb-lg-5 mb-lg-5">
             
