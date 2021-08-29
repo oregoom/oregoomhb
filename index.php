@@ -96,13 +96,13 @@ if(have_posts()){
                 
                 
                 <!--//GOOGLE ADSENSE (Movil) -->
-                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
+                <!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
                     <div class="pb-4 text-center d-lg-none">
                         
                         <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
                         
                     </div>                
-                <?php } ?>
+                <?php } ?>-->
 
                 
                 <div class="pb-4">
@@ -179,11 +179,11 @@ if(have_posts()){
         <?php } ?>
 
         <!--//GOOGLE ADSENSE (Movil) -->
-        <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
+        <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
 
             <div class="pb-4 mb-4 text-center d-lg-none">
 
-                <?php echo get_option('template_oregoom_adsense_300_600'); ?>
+                <?php echo get_option('template_oregoom_adsense_300_250'); ?>
 
             </div>
 
