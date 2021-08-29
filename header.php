@@ -193,12 +193,12 @@
                     </div>
                     
                     
-                    <!--Menú movil-->
+                    <!--Menú PC-->
                     <div class="navbar-toggler rounded-circle p-3 mb-5 mr-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
                         <span class="navbar-toggler-icon"></span>
                     </div>
                     
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">                      
+                    <div class="collapse navbar-collapse ml-4" id="navbarSupportedContent">                      
 
                         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
 
@@ -206,7 +206,14 @@
 
                         </ul>
 
+                        <div class="d-flex ml-2">
+                            <a class="btn btn-outline-info mr-2 d-none d-xl-block" href="https://www.nuevotiempo.org/radio/" target="_blank" role="button">Radio en vivo</a>
+                            <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
+                        </div>
+
                     </div>
+
+
                     
                     <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
                         
@@ -233,6 +240,13 @@
                             <ul class="navbar-nav">
 
                                 <?php oregoom_navegation_menus(); ?>
+
+                                <li class="nav-item mb-2 mt-2">
+                                    <a class="btn btn-outline-info" href="https://www.nuevotiempo.org/radio/" target="_blank" role="button">Radio en vivo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
+                                </li>
 
                             </ul>
                             

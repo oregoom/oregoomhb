@@ -96,14 +96,6 @@ add_action( 'wp_enqueue_scripts', 'bootstrap_js');
 
 
 
-
-
-
-
-
-
-
-
 //Agregar clase a <p> de the_content()
 add_filter( 'the_content', 'hb_add_style_the_content', 10, 1 );
 function hb_add_style_the_content( $content = null ){
@@ -120,6 +112,25 @@ function hb_add_style_the_content( $content = null ){
 //        return $content;
 //    }       
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Register Navigation Menus
 function hb_register_menus() {
@@ -159,7 +170,7 @@ function oregoom_navegation_menus(){
 
                 if($oregoomMenu->menu_item_parent == 0){
                     ?>
-                    <li class="nav-item active dropdown ml-3">                    
+                    <li class="nav-item active dropdown">                    
                         <?php
 
                         //target para AMP tiene que tener un valor
@@ -203,6 +214,28 @@ function oregoom_navegation_menus(){
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* =================================================================

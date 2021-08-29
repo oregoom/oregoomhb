@@ -18,17 +18,17 @@ if(have_posts()){
             <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Inicio</a></li>                                
             <li class="breadcrumb-item active text-dark" aria-current="page"><?php the_title(); ?></li>
         </ol>
-        
+
     </nav>
     
 </div>
     
-<article class="container bg-white pb-5"><?php
+<article class="container bg-white pb-5 pt-2 pt-lg-0"><?php
 
     //IMG destacada de POST
     if( has_post_thumbnail() ) {
 
-        the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 mb-lg-5 ml-lg-5 mr-lg-5' )); 
+        the_post_thumbnail('full', array( 'class' => 'img-fluid rounded mb-4 mb-lg-5 ml-lg-5 mr-lg-5' )); 
 
     } ?>
             
