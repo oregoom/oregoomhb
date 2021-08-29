@@ -6,34 +6,33 @@ if(have_posts()){
     
     while(have_posts()) : the_post(); ?>   
 
-<div class="d-none d-lg-block container-fluid pb-0 mb-0" id="img-bg-page">
-    <nav aria-label="breadcrumb" class="container d-none d-lg-block pt-4">
-        <ol class="breadcrumb rounded-pill" style="background: rgba(0, 0, 0, 0.3);">
-            <li class="breadcrumb-item"><a class="text-warning" href="<?php echo esc_url(home_url()); ?>">Inicio</a></li>                                
-            <li class="breadcrumb-item active text-white" aria-current="page"><?php the_title(); ?></li>
-        </ol>
-    </nav>
+<div class="d-none d-lg-block pb-0 mb-0">
+
+        <nav aria-label="breadcrumb" class="container d-none d-lg-block">
+            <ol class="breadcrumb pl-0 pr-0 mb-0" style="background: #ffffff; font-size: 13px;">
+                <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Inicio</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page"><?php the_title(); ?></li>
+            </ol>
+        </nav>
     
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="container bg-white pt-lg-5 pt-4 pb-5 mt-lg-n5" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+<div class="container bg-white pb-5">
     
-    <div class="container">        
         <div class="row">
             
             <article class="col-xl-8 col-lg-7">
+
+            <?php
+    
+            //IMG destacada de POST
+            if( has_post_thumbnail() ) {
+
+                the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 rounded shadow-sm' )); 
+
+            } ?>
                 
                 <h1 class="pb-4 text-center"><strong> <?php the_title(); ?> </strong></h1>
                 
@@ -104,8 +103,7 @@ if(have_posts()){
                 <?php get_sidebar();?>            
             </aside>
             
-        </div>        
-    </div>
+        </div> 
     
 </div>
 
