@@ -6,11 +6,18 @@ if(have_posts()){
 
         <div class="container pb-5 pt-4 pt-lg-5">
 
-            <h1 class="pb-3 text-center"><strong><?php the_title(); ?></strong></h1>
+            <h1 class="pb-3 text-center" style="font-family: 'Salsa';"><strong><?php the_title(); ?></strong></h1>
         
-            <div class="row pt-2 pt-lg-4 ">
+            <div class="row pt-0 pt-lg-4 ">
                 
-                <article class="col-xl-8 col-lg-8">                   
+                <article class="col-xl-8 col-lg-8"><?php    
+    
+                    //IMG destacada de POST
+                    if( has_post_thumbnail() ) {
+
+                        the_post_thumbnail('full', array( 'class' => 'img-fluid mb-4 rounded shadow-sm' )); 
+
+                    } ?>
                     
                     <div class="pb-5">   
 
