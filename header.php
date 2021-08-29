@@ -78,10 +78,10 @@
 
             #img-bg-page{
                 /*padding-top: 220px;*/
-                height: 394px;
+                /*height: 394px;*/
                 background:linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),  url(<?php echo get_the_post_thumbnail_url(); ?>);
                 background-repeat: no-repeat;
-                background-size: 100%, cover;
+                background-size: cover, 100%;
             }
 
             #img-bg-search{
