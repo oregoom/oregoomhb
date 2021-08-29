@@ -32,16 +32,16 @@ if(have_posts()){
 
     //} ?>
             
-    <h1 class="text-center h2 border-bottom pb-3" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
+    <h1 class="text-center h2 pb-3" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
 
     <!--//GOOGLE ADSENSE 728x90 (PC) -->
-    <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>                
+    <!--<?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>                
         <div class="pt-2 text-center d-none d-lg-block">                        
             <?php echo get_option('template_oregoom_adsense_728_90'); ?>                        
         </div>                
-    <?php } ?>
+    <?php } ?>-->
     
-    <div class="pt-3 pt-lg-4 pb-5">
+    <div class="pt-2 pt-lg-4 pb-5">
         
         <?php the_content(); ?>
         
