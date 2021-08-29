@@ -6,27 +6,27 @@ if(have_posts()){
 
         <div class="container pb-5 pt-4 pt-lg-5">
 
-                <h1 class="pb-3 text-center"><strong><?php the_title(); ?></strong></h1>
-            
-                <div class="row pt-2 pt-lg-4 ">
+            <h1 class="pb-3 text-center"><strong><?php the_title(); ?></strong></h1>
+        
+            <div class="row pt-2 pt-lg-4 ">
+                
+                <article class="col-xl-8 col-lg-8">                   
                     
-                    <article class="col-xl-8 col-lg-8">                   
+                    <div class="pb-5">   
+
+                        <?php the_content(); ?>      
                         
-                        <div class="pb-5">   
+                    </div>     
 
-                            <?php the_content(); ?>      
-                            
-                        </div>     
+                </article>  
 
-                    </article>  
+                <aside class="col-xl-4 col-lg-4">      
 
-                    <aside class="col-xl-4 col-lg-4">      
-
-                        <?php get_sidebar();?>  
-                    
-                    </aside>
-                    
-                </div> 
+                    <?php get_sidebar();?>  
+                
+                </aside>
+                
+            </div> 
             
         </div>
 
