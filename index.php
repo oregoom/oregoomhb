@@ -146,17 +146,6 @@ if(have_posts()){
                 </div>
                 
             </article> 
-            
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
-
-            <div class="col pb-4 mb-4 text-center d-lg-none">
-
-                <?php echo get_option('template_oregoom_adsense_300_600'); ?>
-
-            </div>
-
-            <?php } ?>
 
             <aside class="col-xl-4 col-lg-4 d-none d-lg-block">    
                 
@@ -164,7 +153,43 @@ if(have_posts()){
                 
             </aside>
             
-        </div>    
+        </div>
+
+        <!--//GOOGLE ADSENSE (PC) -->
+        <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
+
+            <div class="pb-4 mb-4 text-center d-none d-xl-block">
+
+                <?php echo get_option('template_oregoom_adsense_970_250'); ?>
+
+            </div>
+
+        <?php } ?>
+
+        
+        <!--//GOOGLE ADSENSE (PC) -->
+        <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+
+            <div class="pb-4 mb-4 text-center d-none d-lg-block d-xl-none">
+
+                <?php echo get_option('template_oregoom_adsense_728_90'); ?>
+
+            </div>
+
+        <?php } ?>
+
+        <!--//GOOGLE ADSENSE (Movil) -->
+        <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
+
+            <div class="pb-4 mb-4 text-center d-lg-none">
+
+                <?php echo get_option('template_oregoom_adsense_300_600'); ?>
+
+            </div>
+
+        <?php } ?>
+
+
     
     <div class="border-top pt-3 mb-5">
         

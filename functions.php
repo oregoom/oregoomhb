@@ -316,6 +316,25 @@ function google_adsense_content_page_menu(){
                             <p class="description"><strong>NOTA:</strong> Opción recomendada para móviles</p>
                         </td>                        
                     </tr> 
+                                        
+                    
+                    
+                    <!--CODE ADSENSE (300x600)-->
+                    <tr>
+                        <th scope="row">
+                            <label for="template_oregoom_adsense_970_250">Code AdSense (970x250)</label>
+                        </th>
+                        <td>
+                            
+                            <textarea name="template_oregoom_adsense_970_250" id="template-oregoom-adsense-970-250" style="min-height: 124px; width: 100%;"><?php echo esc_textarea(get_option('template_oregoom_adsense_970_250')); ?></textarea>
+                            <p class="description">Este formato, también denominado "rectángulo mediano", suele ofrecer un 
+                                mayor inventario de anuncios de anunciantes, lo que puede aumentar los ingresos si se 
+                                habilitan tanto los anuncios de texto como los anuncios de imagen.</p>
+                            <p class="description">Ofrece un buen rendimiento cuando se inserta en contenido de 
+                                texto o al final de los artículos.</p>
+                            <p class="description"><strong>NOTA:</strong> Opción recomendada para móviles</p>
+                        </td>                        
+                    </tr>
                     
                     
                     
@@ -364,6 +383,7 @@ function template_oregoom_register_options_admin_page() {
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_728_90');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_300_600');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_160_600');
+    register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_970_250');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_google_amp_auto');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_google_analytics');
     

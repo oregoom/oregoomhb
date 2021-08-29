@@ -73,13 +73,4 @@
     </div>
 </div>
 
-<!--//GOOGLE ADSENSE (PC) -->
-<?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
 
-    <div class="pb-4 mb-4 text-center sticky-top d-none d-xl-block">
-
-        <?php echo get_option('template_oregoom_adsense_300_600'); ?>
-
-    </div>
-
-<?php } ?>
