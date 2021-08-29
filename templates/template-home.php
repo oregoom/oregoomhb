@@ -81,7 +81,7 @@ if(have_posts()){
 
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                             <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded shadow']); ?>
+                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded']); ?>
                                 <!--<img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2021/04/historias-de-lot.jpg">-->
                             </a>
 
