@@ -166,6 +166,9 @@
                     }
                 </script>
 
+            </amp-analytics>
+            
+            <amp-analytics type="gtag" data-credentials="include">
                 <script type="application/json">
                     {
                         "vars" : {
