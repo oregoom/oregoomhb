@@ -158,15 +158,26 @@
                     {
                       "vars" : {
                         "gtag_id": "<?php echo get_option('template_oregoom_google_analytics'); ?>",
-                        "gtag_id": "<?php echo get_option('template_oregoom_google_analytics_4'); ?>",
                         "config" : {
                           "<?php echo get_option('template_oregoom_google_analytics'); ?>": { "groups": "default" }
+                        }
+                      }
+                    }
+                </script>
+            </amp-analytics>    
+            
+            <amp-analytics type="gtag" data-credentials="include">
+                <script type="application/json">
+                    {
+                      "vars" : {
+                        "gtag_id": "<?php echo get_option('template_oregoom_google_analytics_4'); ?>",
+                        "config" : {
                           "<?php echo get_option('template_oregoom_google_analytics_4'); ?>": { "groups": "default" }
                         }
                       }
                     }
                 </script>
-            </amp-analytics>        
+            </amp-analytics> 
         <?php } ?>
 
     </head>
