@@ -158,8 +158,10 @@
                     {
                       "vars" : {
                         "gtag_id": "<?php echo get_option('template_oregoom_google_analytics'); ?>",
+                        "gtag_id": "<?php echo get_option('template_oregoom_google_analytics_4'); ?>",
                         "config" : {
                           "<?php echo get_option('template_oregoom_google_analytics'); ?>": { "groups": "default" }
+                          "<?php echo get_option('template_oregoom_google_analytics_4'); ?>": { "groups": "default" }
                         }
                       }
                     }

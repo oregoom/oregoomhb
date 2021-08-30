@@ -398,7 +398,21 @@ function google_adsense_content_page_menu(){
                             <input type="text" name="template_oregoom_google_analytics" id="template_oregoom_google_analytics" style="width: 30%;" value="<?php echo esc_textarea(get_option('template_oregoom_google_analytics')); ?>">
                             <p class="description">Google Analytics.</p>
                         </td>                        
-                    </tr>                 
+                    </tr>   
+                                        
+                    
+                    
+                    <!--CODE Google Analytics 4-->
+                    <tr>
+                        <th scope="row">
+                            <label for="template_oregoom_google_analytics_4">Code Google Analytics 4</label>
+                        </th>
+                        <td>         
+                            <input type="text" name="template_oregoom_google_analytics_4" id="template_oregoom_google_analytics_4" style="width: 30%;" value="<?php echo esc_textarea(get_option('template_oregoom_google_analytics_4')); ?>">
+                            <p class="description">Google Analytics 4.</p>
+                        </td>                        
+                    </tr> 
+
                     
                 </tbody>
             </table>   
@@ -419,6 +433,7 @@ function template_oregoom_register_options_admin_page() {
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_970_250');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_google_amp_auto');
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_google_analytics');
+    register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_google_analytics_4');
     
 }
 add_action('admin_init','template_oregoom_register_options_admin_page');
