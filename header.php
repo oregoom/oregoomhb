@@ -168,19 +168,6 @@
 
             </amp-analytics>
             
-            <amp-analytics type="gtag" data-credentials="include">
-                <script type="application/json">
-                    {
-                        "vars" : {
-                            "gtag_id": "<?php echo get_option('template_oregoom_google_analytics_4'); ?>",
-                            "config" : {
-                            "<?php echo get_option('template_oregoom_google_analytics_4'); ?>": { "groups": "default" }
-                            }
-                        }
-                    }
-                </script>
-
-            </amp-analytics> 
         <?php } ?>
 
     </head>
