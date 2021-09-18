@@ -242,40 +242,112 @@ function oregoom_navegation_menus(){
  * Function para agregar un Menú y Página del Template Oregoom
  * en Admin de WordPress
  */
-function google_adsense_add_admin_menu_page(){
+
+
+function theme_hb_add_admin_menu_page(){
     
     //PD: https://codex.wordpress.org/Adding_Administration_Menus
     
-    $page_title = 'Google AdSense en Template Oregoom';     //Título de la página
-    $menu_title = 'Ads Oregoom';                            //Título para Menú
+    $page_title = 'Theme HB';     //Título de la página
+    $menu_title = 'Theme HB';                            //Título para Menú
     $capability = 'manage_options';                         //Capacidad - manage_option => Adminsitrar opción
-    $menu_slug = 'google-adsense-oregoom';                  //El nombre del slug para referirse a este menú
-    $function = 'google_adsense_content_page_menu';         //La función que muestra el contenido de la página del menú.
+    $menu_slug = 'theme_hb';                  //El nombre del slug para referirse a este menú
+    $function = 'theme_hb_content_page_menu';         //La función que muestra el contenido de la página del menú.
     $icon_url = 'dashicons-carrot';                         //La url del icono que se utilizará para este menú.
     
     add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url);
+    add_submenu_page( $menu_slug, 'Ads Theme HB', 'Ads Theme HB', 'manage_options', 'ads-theme-bg', 'ads_theme_hb_content_page_menu');
     
 }
-add_action('admin_menu','google_adsense_add_admin_menu_page');
+add_action('admin_menu','theme_hb_add_admin_menu_page');
 
-function google_adsense_content_page_menu(){
+
+
+/*
+ * Function para agregar contenido HTML en la página The HB
+ */
+function theme_hb_content_page_menu(){
+    ?>
+
+        <div class="wrap">        
+        <h1>Agregar Contenidos en Home</h1>        
+        
+        <?php settings_errors();//Muestra los mensajes de éxito o de error cuando se envía el formulario ?>
+        
+        <h2>Bloque de Historias de la Biblia</h2>
+        <form method="post" action="<?php echo esc_url(admin_url('options.php') ); ?>">
+        
+            <?php 
+            //Para proteger formularios
+            wp_nonce_field(basename(__FILE__), 'theme_hb_home_form_nonce'); 
+            ?>
+            
+            <?php settings_fields( 'theme_hb_home_custom_admin_settings_group' ); ?>
+            <?php do_settings_sections( 'theme_hb_home_custom_admin_settings_group' ); ?>
+            
+            <table class="form-table" role="presentation">
+                <tbody>   
+                    
+                    <!--CODE ADSENSE (300x250)-->
+                    <tr>
+                        <th scope="row">
+                            <label for="theme_hb_home_01">Historias de Creación a Diluvio</label>
+                        </th>
+                        <td>
+                            <p class="description">Descripción de historias de Creación a Diluvio</p>
+                            <?php  wp_editor( get_option('theme_hb_home_text_01'), 'theme_hb_home_text_01', array('media_buttons' => false,'textarea_rows' => 10,)); ?>
+                            <br>                            
+                            <p class="description">ID de Historias de la Biblia. <strong>Ejemplo: </strong>12,25,16</p>
+                            <input style="width: 100%" type="text" name="theme_hb_home_id_historias_post" value="<?php echo esc_html(get_option('theme_hb_home_id_historias_post')); ?>">
+                            <br>                            
+                            <p class="description">Pegar este shortcode en Página Home <strong>[hb-home-creacion-diluvio]</strong></p>
+                        </td>                        
+                    </tr>                    
+
+                    
+                </tbody>
+            </table>   
+            
+            <?php submit_button(); ?>
+            
+        </form>    
+    </div> <?php
+}
+function theme_hb_home_register_options_admin_page() {
+    
+    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_text_01');
+    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_id_historias_post');
+    
+}
+add_action('admin_init','theme_hb_home_register_options_admin_page');
+
+
+
+
+
+
+
+/*
+ * Function para agregar contenido HTML en la página Ads Theme HB
+ */
+function ads_theme_hb_content_page_menu(){
     ?>
 
         <div class="wrap">        
         <h1>Agregar códigos de Google AdSense en Plantilla Oregoom</h1>        
-         
+        
         <?php settings_errors();//Muestra los mensajes de éxito o de error cuando se envía el formulario ?>
         
         <h2>Bloque de anuncios</h2>
         <form method="post" action="<?php echo esc_url(admin_url('options.php') ); ?>">
-            	    
+        
             <?php 
             //Para proteger formularios
             wp_nonce_field(basename(__FILE__), 'template_oregoom_form_nonce'); 
             ?>
             
             <?php settings_fields( 'template_oregoom_custom_admin_settings_group' ); ?>
-	    <?php do_settings_sections( 'template_oregoom_custom_admin_settings_group' ); ?>
+            <?php do_settings_sections( 'template_oregoom_custom_admin_settings_group' ); ?>
             
             <table class="form-table" role="presentation">
                 <tbody>   
@@ -424,6 +496,10 @@ function google_adsense_content_page_menu(){
     <?php
 }
 
+
+
+
+
 function template_oregoom_register_options_admin_page() {
     
     register_setting( 'template_oregoom_custom_admin_settings_group', 'template_oregoom_adsense_300_250');
@@ -437,6 +513,7 @@ function template_oregoom_register_options_admin_page() {
     
 }
 add_action('admin_init','template_oregoom_register_options_admin_page');
+
 
 
 include_once 'inc/shortcode.php';

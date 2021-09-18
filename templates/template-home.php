@@ -24,7 +24,7 @@ if(have_posts()){
             
             <h1 class="pt-4 pb-2 text-center" style="font-family: 'Salsa'; font-weight: 600; font-size: 50px;"><span style="color: #f76300;">Historias</span> de la Biblia<?php // the_title(); ?></h1>
             
-            <div class="ml-auto mr-auto" id="get_search" style="max-width: 60%;">
+            <div class="ml-auto mr-auto d-none d-md-block" id="get_search" style="max-width: 60%;">
                 <?php get_search_form(); ?>            
             </div>
             
@@ -33,31 +33,9 @@ if(have_posts()){
                 <a href="https://historiasdelabiblia.org/nuevo-testamento/" class="btn btn btn-dark shadow-sm ml-2">Nuevo Testamento</a>
             </div>
             
-            <div class="mt-3 mb-3 text-center">
+            <div class="mt-4 pt-3 mb-3 text-center d-none d-md-block">
                 
-                <!--//GOOGLE ADSENSE 728x90 (PC) -->
-                <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>                
-                    <div class="text-center d-none d-lg-block">                        
-                        <?php echo get_option('template_oregoom_adsense_728_90'); ?>                        
-                    </div>                
-                <?php } ?>
-                
-                <!--//GOOGLE ADSENSE 300x250 (Movil) -->
-                <!--<?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>                
-                    <div class="text-center d-lg-none">                        
-                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>                        
-                    </div>                
-                <?php } ?>-->
-                
-            </div>
-            
-            <div class="text-center mt-4">
-                
-                <p><strong>Bienvenido</strong> a nuestra página web <strong>historiasdelabiblia.org</strong>, en donde podrás encontrar las Mejores y Grandes <strong>HISTORIAS de la BIBLIA</strong>, para Adultos, Jóvenes y Niños completamente ilustradas para leer.</p>
-
-                <!--<p>Las mejores historias de la Biblia para Leer</p>-->
-
-                <div class="row mt-4 pt-1">
+                <div class="row">
 
                     <?php            
                     $query_home_hb = new WP_Query( array (
@@ -71,44 +49,54 @@ if(have_posts()){
                                                     'value'   => array( 'AT', 'NT' ),
                                                 ),
                                             ),
-                            'posts_per_page' => 12
-                            ));            
-                    ?>
+                            'posts_per_page' => 4
+                            ));     
 
-                    <?php if($query_home_hb->have_posts()){ ?>
+                    if($query_home_hb->have_posts()) {
 
-                    <?php while($query_home_hb->have_posts()) : $query_home_hb->the_post(); ?>
+                        $post_home_destacado = 1;
 
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded']); ?>
-                                <!--<img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2021/04/historias-de-lot.jpg">-->
-                            </a>
+                        while($query_home_hb->have_posts()) : $query_home_hb->the_post(); ?>
 
-                            <div class="pt-2 pb-3 text-center" style="line-height: 1em; font-family: Raleway, sans-serif;">
-                                <a href="<?php the_permalink(); ?>" class="h4 text-dark">
-                                    <small><?php the_title(); ?></small>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-4 <?php if($post_home_destacado == 3){ echo "d-none d-lg-block"; } if($post_home_destacado == 4){ echo "d-none d-xl-block"; } ?>">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded shadow']); ?>
+                                    <!--<img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2021/04/historias-de-lot.jpg">-->
                                 </a>
-                            </div>
-                        </div>
 
-                    <?php endwhile; ?> 
+                                <div class="pt-2 pb-3 text-center" style="line-height: 1em; font-family: Raleway, sans-serif;">
+                                    <a href="<?php the_permalink(); ?>" class="h4 text-dark">
+                                        <small><?php the_title(); ?></small>
+                                    </a>
+                                </div>
+                            </div> <?php 
 
-                    <?php wp_reset_postdata(); ?>      
+                            $post_home_destacado++;
+                            
+                        endwhile;
 
-                    <?php } ?>
+                        wp_reset_postdata();     
+
+                    } ?>
 
                 </div>
+                
+            </div>
+            
+            <div class="text-center mt-md-0 mt-3">
+                
+                <p><strong>Bienvenido</strong> a nuestra página web <strong>historiasdelabiblia.org</strong>, en donde podrás encontrar las Mejores y Grandes <strong>HISTORIAS de la BIBLIA</strong>, para Adultos, Jóvenes y Niños completamente ilustradas para leer.</p>
+
+                <!--<p>Las mejores historias de la Biblia para Leer</p>-->                
 
             </div>
             
         </section>
-        
-        
-        
+
+
         <section class="container pb-4">
             
-            <h2 class="h4 pt-4 pb-2 mb-3 text-center" style="color: #FD6003; border-bottom: 1px solid #FD6003; font-weight: 400!important; font-size: 24px!important; font-family: 'Lobster',cursive!important;">Comparte con tus amigos</h2>
+            <h2 class="h4 pb-2 mb-3 text-center" style="color: #FD6003; border-bottom: 1px solid #FD6003; font-weight: 400!important; font-size: 24px!important; font-family: 'Lobster',cursive!important;">Comparte con tus amigos</h2>
             
             <div class="pb-4 text-center">    
                 <span class="mr-2">
@@ -135,7 +123,7 @@ if(have_posts()){
             <p class="mb-4"><strong>A continuación, podrás encontrar dos opciones como:</strong> Historias Bíblicas del Antiguo Testamento e Historias Bíblicas del Nuevo Testamento. Simplemente elige una de esas opciones sabiendo en cuál de los dos se encuentra la historia que estás buscando.</p>
             <p class="mb-4">Tal vez no estás buscando una historia específica o a lo mejor llegaste a este sitio por curiosidad, entonces te invito a explorar con toda la libertad dentro de esas dos opciones.</p>
 
-           
+        
             <div class="row justify-content-center mt-5">
                 
                 

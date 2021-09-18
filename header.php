@@ -214,7 +214,7 @@
                         </ul>
 
                         <div class="d-flex ml-2">
-                            <a class="btn btn-outline-info mr-2 d-none d-xl-block" href="https://www.nuevotiempo.org/radio/" target="_blank" role="button">Radio en vivo</a>
+                            <a class="btn btn-outline-info mr-2 d-none d-xl-block" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
                             <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
                         </div>
 
