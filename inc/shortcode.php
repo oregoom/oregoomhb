@@ -136,50 +136,11 @@ function hb_home_creacion_diluvio(){
                 </div>
 
             </div>
-        </div>
-
-        <!--<div class="row"><?php
-        
-        for($i=0;$i<count($id_pages);$i++){
-            
-            $shortcode_query = new WP_Query( array(
-                                            'page_id' => $id_pages[$i]
-            ));
-
-            if($shortcode_query->have_posts()){
-
-                while($shortcode_query->have_posts()) : $shortcode_query->the_post();
-
-                    if(has_post_thumbnail()){ ?>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="mb-3 card border-0 shadow-sm text-center">
-
-                        <a href="<?php echo the_permalink(); ?>"><img src="<?php the_post_thumbnail_url();?>" class="rounded-top"></a>
-
-                        <div class="card-body pt-lg-3 pt-2">
-                            <h4 class="card-title h5 mb-2" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700; color: #2a3b47;">
-                                <a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a>
-                            </h4>
-                            
-                            <?php //Funcion para extraer 100 caracteres
-                                hb_excerpt_100_caracteres(get_the_excerpt()); ?>
-                            
-                        </div>
-
-                    </div>
-                </div><?php }
-
-                endwhile;
-                $shortcode_query->reset_postdata();                 
-            }
-        }
-        ?></div>--><?php
+        </div> <?php
         
         return ob_get_clean ();
 
     }
-    
-    
     
 }
 add_shortcode('hb-home-creacion-diluvio', 'hb_home_creacion_diluvio');

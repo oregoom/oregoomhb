@@ -114,7 +114,7 @@ if(have_posts()){
             
         </section> 
                 
-        <section class="container pt-4 pb-4 mb-4 pt-lg-5 pb-lg-5 mb-lg-5">
+        <section class="container pt-5 pb-4">
             
                         
             <h2 class="text-center pb-2">Historias Bíblicas</h2>
@@ -124,11 +124,12 @@ if(have_posts()){
             <p class="mb-4">Tal vez no estás buscando una historia específica o a lo mejor llegaste a este sitio por curiosidad, entonces te invito a explorar con toda la libertad dentro de esas dos opciones.</p>
 
         
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center mt-4">
                 
                 
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-5 text-center">
                     <div class="shadow-sm pb-5">
+
                         <a href="https://historiasdelabiblia.org/antiguo-testamento/">
                             <img class="rounded-top img-fluid" src="https://historiasdelabiblia.org/wp-content/uploads/2021/04/historias-biblicas-del-antiguo-testamento.jpg">
                         </a>
@@ -140,6 +141,7 @@ if(have_posts()){
                         </div>
 
                         <a href="https://historiasdelabiblia.org/antiguo-testamento/" class="btn btn-outline-secondary rounded-pill pl-5 pr-5">Ver más</a>
+
                     </div>
                     
                 </div>
@@ -166,7 +168,7 @@ if(have_posts()){
             
         </section>
             
-        <section class="container pt-5">
+        <section class="container pt-4">
             
             <?php the_content(); ?>  
             
