@@ -329,7 +329,7 @@
 
         <div class="text-center mb-2">
 
-            <a href="<?php echo esc_url(home_url().'/nuevo-testamento/'); ?>" class="btn rounded-pill text-white" style="padding-left: 30px; padding-right: 30px; background-color: #FA6002;">Más historias aquí</a>
+            <a href="<?php echo esc_url(home_url().'/antiguo-testamento/'); ?>" class="btn rounded-pill text-white" style="padding-left: 30px; padding-right: 30px; background-color: #FA6002;">Más historias aquí</a>
                 
         </div>
         
