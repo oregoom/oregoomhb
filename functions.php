@@ -288,7 +288,7 @@ function theme_hb_content_page_menu(){
             <table class="form-table" role="presentation">
                 <tbody>   
                     
-                    <!--CODE ADSENSE (300x250)-->
+                    <!--Historias Bíblicas desde Creación a Diluvio = AT-->
                     <tr>
                         <th scope="row">
                             <label for="theme_hb_home_01">Historias de Creación a Diluvio</label>
@@ -298,12 +298,27 @@ function theme_hb_content_page_menu(){
                             <?php  wp_editor( get_option('theme_hb_home_text_01'), 'theme_hb_home_text_01', array('media_buttons' => false,'textarea_rows' => 10,)); ?>
                             <br>                            
                             <p class="description">ID de Historias de la Biblia. <strong>Ejemplo: </strong>12,25,16</p>
-                            <input style="width: 100%" type="text" name="theme_hb_home_id_historias_post" value="<?php echo esc_html(get_option('theme_hb_home_id_historias_post')); ?>">
+                            <input style="width: 100%" type="text" name="theme_hb_home_id_historias_post_01" value="<?php echo esc_html(get_option('theme_hb_home_id_historias_post_01')); ?>">
                             <br>                            
                             <p class="description">Pegar este shortcode en Página Home <strong>[hb-home-creacion-diluvio]</strong></p>
                         </td>                        
-                    </tr>                    
-
+                    </tr>   
+                    
+                    <!--Historias Bíblicas desde Torre de Babel a Moisés = AT-->
+                    <tr>
+                        <th scope="row">
+                            <label for="theme_hb_home_01">Historias de Torre de Babel a Moisés</label>
+                        </th>
+                        <td>
+                            <p class="description">Descripción de historias de Torre de Babel a Moisés</p>
+                            <?php  wp_editor( get_option('theme_hb_home_text_02'), 'theme_hb_home_text_02', array('media_buttons' => false,'textarea_rows' => 10,)); ?>
+                            <br>                            
+                            <p class="description">ID de Historias de la Biblia. <strong>Ejemplo: </strong>12,25,16</p>
+                            <input style="width: 100%" type="text" name="theme_hb_home_id_historias_post_02" value="<?php echo esc_html(get_option('theme_hb_home_id_historias_post_02')); ?>">
+                            <br>                            
+                            <p class="description">Pegar este shortcode en Página Home <strong>[hb-home-torre-de-babel-moises]</strong></p>
+                        </td>                        
+                    </tr> 
                     
                 </tbody>
             </table>   
@@ -316,7 +331,9 @@ function theme_hb_content_page_menu(){
 function theme_hb_home_register_options_admin_page() {
     
     register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_text_01');
-    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_id_historias_post');
+    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_id_historias_post_01');
+    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_text_02');
+    register_setting( 'theme_hb_home_custom_admin_settings_group', 'theme_hb_home_id_historias_post_02');
     
 }
 add_action('admin_init','theme_hb_home_register_options_admin_page');

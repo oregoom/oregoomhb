@@ -182,7 +182,7 @@
         
         
         
-        <header>
+        <header class="">
             
             <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
                 <div class="container"><?php
@@ -214,7 +214,7 @@
                         </ul>
 
                         <div class="d-flex ml-2">
-                            <a class="btn btn-outline-info mr-2 d-none d-xl-block" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
+                            <a class="btn btn-outline-primary mr-2 d-none d-xl-block" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
                             <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
                         </div>
 
@@ -249,7 +249,7 @@
                                 <?php oregoom_navegation_menus(); ?>
 
                                 <li class="nav-item mb-2 mt-2">
-                                    <a class="btn btn-outline-info" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
+                                    <a class="btn btn-outline-primary" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
