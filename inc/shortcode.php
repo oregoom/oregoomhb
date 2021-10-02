@@ -101,7 +101,7 @@ function hb_home_torre_de_babel_moises(){
 
     if(get_option('theme_hb_home_text_02') && get_option('theme_hb_home_id_historias_post_02') ){
 
-        $desc_home_text_01 = get_option('theme_hb_home_text_01');
+        $desc_home_text_01 = get_option('theme_hb_home_text_02');
         $id_historias_post = esc_html(get_option('theme_hb_home_id_historias_post_02'));
 
         /*FUNCTION  de Periodo*/
