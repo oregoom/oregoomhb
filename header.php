@@ -98,8 +98,15 @@
                 border-bottom: 0 !important;
             }
 
+                #hb-container-historias-relato-r{
+                    padding-right: 7.5px;
+                }
+                #hb-container-historias-relato-l{
+                    padding-left: 7.5px;
+                }
+
                 h2#hb-title-historias-relato{
-                    font-size: 1rem !important;
+                    font-size: 1.05rem !important;
                 }
 
         }

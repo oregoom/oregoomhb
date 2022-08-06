@@ -334,7 +334,7 @@ function id_hb_shortcode_per_at($ID_Cat){
 
             if(has_post_thumbnail()){ ?>
 
-                <div class="col-6 col-md-12">
+                <div class="col-6 col-md-12" <?php if( ($count_historias_page % 2) != 0){ echo 'id="hb-container-historias-relato-r"'; } else { echo 'id="hb-container-historias-relato-l"'; } ?>>
 
                     <div class="card mb-4 border-0 shadow-sm bg-light">
                         <div class="row no-gutters">
