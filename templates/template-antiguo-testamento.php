@@ -12,7 +12,7 @@ if(have_posts()){
     
         <article class="container pb-5 pt-4 pt-lg-5">
                     
-            <h1 class="text-center h2 pb-3" style="font-family: 'Salsa'; font-size: 40px;"><strong><?php the_title(); ?></strong></h1>
+            <h1 class="text-center px-xl-5" id="hb-title-at-nt"><?php the_title(); ?></h1>
             
             <div class="pt-2 pt-lg-4 pb-5">
                 

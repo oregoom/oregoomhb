@@ -270,18 +270,20 @@ function hb_shortcode_at_nt( $atnt ){
     
         if($shortcode_query->have_posts()){ ?>
         
-            <div class="row"><?php
+            <div class="row pt-lg-3 mb-5"><?php
                 
                 while($shortcode_query->have_posts()) : $shortcode_query->the_post();
 
                     if(has_post_thumbnail()){ ?>
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="mb-5 card border-0 shadow-sm">
+
+                    <div class="card bg-light mb-4 border-0 shadow-sm  ">
 
                         <a href="<?php echo the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('medium');?>" class="rounded-top"></a>
 
-                        <div class="card-body pt-lg-3 pt-2">
-                            <h4 class="card-title h5 mb-2" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700; color: #2a3b47;">
+                        <div class="card-body rounded-bottom">
+                            
+                            <h4 class="card-title h5 py-0" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700;">
                                 <a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a>
                             </h4>
                             
@@ -290,6 +292,7 @@ function hb_shortcode_at_nt( $atnt ){
                         </div>
 
                     </div>
+
                 </div><?php }
 
                 endwhile;

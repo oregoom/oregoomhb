@@ -46,7 +46,7 @@
         @media (min-width: 768px) {
 
             h1{
-                font-size: 3rem !important; 
+                font-size: 3rem; 
             }
 
             /* Boton de play en IMG destacada */
@@ -54,6 +54,9 @@
                 width: 78px;
             }
 
+            #hb-title-at-nt{
+                font-family: 'Salsa'; font-size: 80px; line-height: 1; font-weight: bold;
+            }
 
         }
 
@@ -61,12 +64,16 @@
         @media (max-width: 767.98px) {
 
             h1{
-                font-size: 1.85rem !important; 
+                font-size: 1.85rem; 
             }
 
             /* Boton de play en IMG destacada */
             #hb-btn-yt{
                 width: 68px;
+            }
+
+            #hb-title-at-nt{
+                font-family: 'Salsa'; font-size: 38px !important; line-height: 1.2; font-weight: bold;
             }
 
         }
@@ -142,7 +149,7 @@
             */
             @media (max-width: 767.98px) { 
                 h1{
-                    font-size: 46px!important;
+                    font-size: 56px;
                 }
                 h2{
                     font-size: 28px!important;
