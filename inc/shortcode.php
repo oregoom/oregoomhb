@@ -342,7 +342,7 @@ function id_hb_shortcode_per_at($ID_Cat){
                                 <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium-large', ['class' => 'card-img', 'alt' => get_the_title() ] );?></a>
                             </div>
                             <div class="col-md-8">
-                            <div class="card-body p-3">
+                            <div class="card-body p-md-3 p-2">
                                 <a href="<?php echo the_permalink(); ?>" class="text-decoration-none">
                                     <h2 class="card-title m-0 p-0" id="hb-title-historias-relato" style="font-family: Raleway, sans-serif; font-weight: 700; color: #2a3b47;"><?php the_title(); ?></h2>
                                 </a>
