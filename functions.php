@@ -506,14 +506,3 @@ include_once 'inc/metaboxes-page.php';
 
 
 
-/*
- * ===============================================================
- * Funcion para extraer 100 caracteres de descripción de cada post
- */
-function hb_excerpt_100_caracteres($get_the_excerpt){
-    
-    $excerpt_post = $get_the_excerpt;
-    $excerpt_post = mb_substr($excerpt_post, 0, 100, "utf-8"); 
-    echo '<p class="text-muted mb-2">'.$excerpt_post.'...</p>'; 
-    
-}

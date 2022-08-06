@@ -58,6 +58,14 @@
                 font-family: 'Salsa'; font-size: 80px; line-height: 1; font-weight: bold;
             }
 
+            #hb-title-historias{
+                font-family: 'Salsa'; font-size: 70px; line-height: 1; font-weight: bold;
+            }
+
+                h2#hb-title-historias-relato{
+                    font-size: 1.3rem !important;
+                }
+
         }
 
         /* Movil */
@@ -75,6 +83,19 @@
             #hb-title-at-nt{
                 font-family: 'Salsa'; font-size: 38px !important; line-height: 1.2; font-weight: bold;
             }
+
+            #hb-title-historias{
+                font-family: 'Salsa'; font-size: 28px !important; line-height: 1.2; font-weight: bold;
+            }
+
+            #hb-desc-historias{
+                text-align: center;
+                border-bottom: 0 !important;
+            }
+
+                h2#hb-title-historias-relato{
+                    font-size: 1rem !important;
+                }
 
         }
 

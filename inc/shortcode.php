@@ -320,36 +320,41 @@ function id_hb_shortcode_per_at($ID_Cat){
 
     $count_historias_page = 1;
 
-        $shortcode_query = new WP_Query( array(
-                                        'cat' => $ID_Cat['id_cat'],
-                                        'order'   => 'ASC',
-                                        'posts_per_page' => 200
-        ));
+    $shortcode_query = new WP_Query( array(
+                            'cat' => $ID_Cat['id_cat'],
+                            'order'   => 'ASC',
+                            'posts_per_page' => 200
+    ));
 
-        if($shortcode_query->have_posts()){ ?>
+    if($shortcode_query->have_posts()){ ?>
 
-    <div class="pt-5 border-top"><?php
+    <div class="row pt-4"><?php
 
         while($shortcode_query->have_posts()) : $shortcode_query->the_post();
 
             if(has_post_thumbnail()){ ?>
 
-                <div class="mb-4 card border-0">
-                  <div class="row no-gutters">
-                    <div class="col-lg-4 col-sm-4">
-                        <a href="<?php echo the_permalink(); ?>"><img src="<?php the_post_thumbnail_url();?>" class="card-img"></a>
-                    </div>
-                    <div class="col-lg-8 col-sm-8">
-                        <div class="card-body pt-sm-0 pl-sm-4 pt-3 pl-0 pr-0">
-                            <p class="text-muted m-0">HISTORIA <?php echo $count_historias_page++; ?></p>
-                            <h5 class="card-title h5 mb-1" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700; color: #2a3b47;"><a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a></h5>
-                            <?php //Funcion para extraer 100 caracteres
-                                    hb_excerpt_100_caracteres(get_the_excerpt()); ?>
-                            <a class="mt-0" href="<?php the_permalink(); ?>"><small>Seguir leyendo</small></a>
+                <div class="col-6 col-md-12">
+
+                    <div class="card mb-4 border-0 shadow-sm bg-light">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium-large', ['class' => 'card-img', 'alt' => get_the_title() ] );?></a>
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body p-3">
+                                <a href="<?php echo the_permalink(); ?>" class="text-decoration-none">
+                                    <h2 class="card-title m-0 p-0" id="hb-title-historias-relato" style="font-family: Raleway, sans-serif; font-weight: 700; color: #2a3b47;"><?php the_title(); ?></h2>
+                                </a>
+                                <small class="text-muted m-0 p-0">HISTORIA <?php echo $count_historias_page++; ?></small>
+                                <p class="card-text" style="line-height: 1.2;"><small><?php hb_excerpt_100_caracteres(get_the_excerpt()); ?> <a href="<?php the_permalink(); ?>"><small>Seguir leyendo</small></a></small></p>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                  </div>
-                </div><?php                    
+
+                </div> <?php                    
+
             }
 
         endwhile;
@@ -363,3 +368,15 @@ function id_hb_shortcode_per_at($ID_Cat){
     
 }
 add_shortcode('id_hb_shortcode_per_at', 'id_hb_shortcode_per_at');
+
+/*
+ * ===============================================================
+ * Funcion para extraer 100 caracteres de descripción de cada post
+ */
+function hb_excerpt_100_caracteres($get_the_excerpt){
+    
+    $excerpt_post = $get_the_excerpt;
+    $excerpt_post = mb_substr($excerpt_post, 0, 100, "utf-8"); 
+    echo $excerpt_post."..."; 
+    
+}
