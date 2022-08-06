@@ -253,7 +253,7 @@ add_shortcode('hb-shortcode-history-home', 'hb_shortcode_history_home');
 
 
 /*
- * =================================================================================
+ * ==================================================================================
  * Shortcode para mostrar historias del Antiguo Testamento(AT) y Nuevo Testamento(NT)
  */
 function hb_shortcode_at_nt( $atnt ){ 
@@ -264,41 +264,43 @@ function hb_shortcode_at_nt( $atnt ){
                                     'meta_value' => $atnt['atnt'],
                                     'post_type'  => 'page',
                                     'order'   => 'DESC',
-                                    'posts_per_page' => 200,
+                                    'posts_per_page' => 400,
                                     'post_status' => 'publish',
                             ));
     
         if($shortcode_query->have_posts()){ ?>
         
-            <div class="row pt-lg-3 mb-5"><?php
+            <div class="row pt-lg-3 mb-lg-5 mb-4"><?php
                 
                 while($shortcode_query->have_posts()) : $shortcode_query->the_post();
 
                     if(has_post_thumbnail()){ ?>
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
 
-                    <div class="card bg-light mb-4 border-0 shadow-sm  ">
+                            <div class="card bg-light mb-4 border-0 shadow-sm">
 
-                        <a href="<?php echo the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('medium');?>" class="rounded-top"></a>
+                                <a href="<?php echo the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('medium_large');?>" class="rounded-top"></a>
 
-                        <div class="card-body rounded-bottom">
-                            
-                            <h4 class="card-title h5 py-0" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700;">
-                                <a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a>
-                            </h4>
-                            
-                            <?php //Funcion para extraer 100 caracteres
-                                    hb_excerpt_100_caracteres(get_the_excerpt()); ?>
+                                <div class="card-body rounded-bottom">
+                                    
+                                    <h4 class="card-title h5 py-0" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700;">
+                                        <a href="<?php the_permalink(); ?>" class="text-dark" target="_self"><?php the_title(); ?></a>
+                                    </h4>
+                                    
+                                    <?php //Funcion para extraer 100 caracteres
+                                            hb_excerpt_100_caracteres(get_the_excerpt()); ?>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-
-                </div><?php }
+                    <?php }
 
                 endwhile;
-                $shortcode_query->reset_postdata(); 
-                ?>
+
+                $shortcode_query->reset_postdata(); ?>
+
             </div><?php
+
         }
     
     return ob_get_clean ();
