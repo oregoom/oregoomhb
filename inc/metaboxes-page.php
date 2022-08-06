@@ -115,7 +115,8 @@ add_action('save_post', 'hb_cat_guardar_metaboxes',10,3);
  */
 function hb_agregar_metaboxes_post(){
    
-  add_meta_box( 'hb_meta_box_post', 'ID de YouTube', 'hb_metaboxes_post', 'post', 'normal', 'high', null );
+    add_meta_box( 'hb_meta_box_post', 'ID de YouTube', 'hb_metaboxes_post', 'post', 'normal', 'high', null );
+    
 }
 add_action( 'add_meta_boxes', 'hb_agregar_metaboxes_post' );
 

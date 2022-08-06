@@ -34,9 +34,6 @@
 
 
 
-
-
-
 add_theme_support( 'post-thumbnails' ); 
 
 add_post_type_support( 'page', 'excerpt' );
@@ -50,44 +47,15 @@ add_theme_support( 'custom-logo', array(
 
 
 
-
-
-
-
-
-
-
 // Incluir Bootstrap JS y dependencia popper
 function bootstrap_js() {
-          
-        // Incluir Bootstrap CSS 5.0 
-//        wp_enqueue_style( 'bootstrap_css', 
-//				'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', 
-//				array(), 
-//				'5.0'
-//				);
-
-        
-        // Incluir Bootstrap CSS 4.6.0    
-        wp_enqueue_style( 'bootstrap_css', 
-				'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', 
-				array(), 
-				'4.6.0'
-				);
-        
-        
-        // Incluir Bootstrap CSS 5.1.0
-//        wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap-5.1.0/css/bootstrap.min.css'), 
-//				array(), 
-//				'5.1.0'
-//				);
-        
-        
-        // Incluir Bootstrap CSS 4.4.1
-        //wp_enqueue_style( 'bootstrap_css', get_theme_file_uri('bootstrap.4.4.1/css/bootstrap.min.css'), 
-		//		array(), 
-		//		'4.4.1'
-		//		);
+                  
+    // Incluir Bootstrap CSS 4.6.0    
+    wp_enqueue_style( 'bootstrap_css', 
+        'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', 
+        array(), 
+        '4.6.0'
+        );
 
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap_js');

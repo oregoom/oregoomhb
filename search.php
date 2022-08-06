@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<div class="d-none d-md-block container-fluid pb-0 text-center" id="img-bg-search">
+<div class="d-none d-md-block container-fluid pb-0 text-center">
     
     <div class="container">
     
-        <h1 class="pt-5 pb-2 text-center text-white text-s"><strong>Buscar</strong></h1>
+        <h1 class="pt-5 pb-2 text-center text-s"><strong>Buscar</strong></h1>
 
         <div class="ml-auto mr-auto mb-3" style="max-width: 70%;">
             <?php get_search_form(); ?>            

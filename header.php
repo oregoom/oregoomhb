@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html amp <?php language_attributes(); ?>>
     <head>
+
         <meta charset="<?php bloginfo('charset'); ?>">
-        <!--<script async src="https://cdn.ampproject.org/v0.js"></script>-->
         <title><?php wp_title(); ?></title>
-
-        <!--<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">-->
-
-        <!--<meta name="viewport" content="width=device-width">-->
-
-<!--        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-        <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-        <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>-->
 
         <style amp-custom>
 
-            .lightbox { 
-                /*background: rgba(0,0,0,.8);*/
-                background: #ffffff;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                display: flex;
-                /*align-items: center;*/
-                /*justify-content: center;*/
+        /* PC y Movil */
+        .lightbox {
+            /*background: rgba(0,0,0,.8);*/
+            /*background: rgba(0,0,0,.9);*/
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Boton de play en IMG destacada Movil y PC 
+        https://www.codegrepper.com/code-examples/csharp/center+image+with+position+absolute
+        https://thoughtbot.com/blog/positioning
+        */
+        #hb-btn-yt{
+                z-index: 998; position: absolute; width: 78px; margin: auto; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
             }
-            
-            .lightbox-youtube { 
-                /*background: rgba(0,0,0,.8);*/
-                background: rgba(0,0,0,.9);
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        .hb-ytp-large-play-button-bg{
+            fill: #212121;
+            fill-opacity: .8;
+        }
+
+        /* https://www.bufa.es/css-aclarar-oscurecer-imagenes/ */
+        #hb-img-destacada{
+            filter: brightness(90%);
+        }
+
+        /* https://lafat32.blogspot.com/2015/12/css-hacer-hover-un-objeto-y-afectar-otro.html */
+        #hb-img-destacada:hover .hb-ytp-large-play-button-bg{
+            fill: #f00;
+            fill-opacity: 1;
+        }
+
+        /* PC */
+        @media (min-width: 768px) {
+
+            h1{
+                font-size: 3rem !important; 
             }
+
+            /* Boton de play en IMG destacada */
+            #hb-btn-yt{
+                width: 78px;
+            }
+
+
+        }
+
+        /* Movil */
+        @media (max-width: 767.98px) {
+
+            h1{
+                font-size: 1.85rem !important; 
+            }
+
+            /* Boton de play en IMG destacada */
+            #hb-btn-yt{
+                width: 68px;
+            }
+
+        }
+
+        /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
             
             p{
                 font-family: 'Roboto', sans-serif;
@@ -99,24 +133,41 @@
             }
 
 
-
+            .hb-movil{
+                border-radius: 0.25rem;*/
+            }
 
             /*
             Solo en Celulares
             */
-            @media (max-width: 575.98px) { 
+            @media (max-width: 767.98px) { 
                 h1{
-                    font-size: 30px!important;
+                    font-size: 46px!important;
                 }
                 h2{
-                    font-size: 24px!important;
+                    font-size: 28px!important;
                 }
                 h3{
-                    font-size: 18px!important;
+                    font-size: 24px!important;
                 }  
 
                 #get_search{
                     max-width: 100%!important;
+                }
+
+                /* Index Post - Entrada WP */
+                .hb-movil{
+                    border-radius: 0rem !important;
+                }
+
+                .container-hb-movil{
+                    padding-right: 0px!important;
+                    padding-left: 0px!important;
+                }
+
+                .h1-hb-movil h1{
+                    font-size: 30px!important;
+                    line-height: 1.2!important;
                 }
 
             }
@@ -200,7 +251,7 @@
                     </div>
                     
                     
-                    <!--Menú PC-->
+                    <!--Botón Movil Bottom-->
                     <div class="navbar-toggler rounded-circle p-3 mb-5 mr-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
                         <span class="navbar-toggler-icon"></span>
                     </div>
@@ -215,7 +266,7 @@
 
                         <div class="d-flex ml-2">
                             <a class="btn btn-outline-primary mr-2 d-none d-xl-block" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
-                            <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
+                            <a class="btn btn btn-warning" href="https://www.paypal.com/donate/?hosted_button_id=THEJDTTLCA7UG" target="_blank" role="button">Done ahora</a>
                         </div>
 
                     </div>
@@ -252,7 +303,7 @@
                                     <a class="btn btn-outline-primary" href="https://bit.ly/3sUqwy1" target="_blank" role="button">Radio en vivo</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="btn btn btn-warning" href="#" target="_self" role="button">Done ahora</a>
+                                    <a class="btn btn btn-warning" href="https://www.paypal.com/donate/?hosted_button_id=THEJDTTLCA7UG" target="_blank" role="button">Done ahora</a>
                                 </li>
 
                             </ul>

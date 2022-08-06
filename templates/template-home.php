@@ -22,18 +22,35 @@ if(have_posts()){
         
         <section class="container pt-0 mt-0 mb-0 pb-2 pt-lg-4 mt-lg-4 pb-lg-5">
             
-            <h1 class="pt-4 pb-2 text-center" style="font-family: 'Salsa'; font-weight: 600; font-size: 50px;"><span style="color: #f76300;">Historias</span> de la Biblia<?php // the_title(); ?></h1>
+            <h1 class="pt-4 pb-2 text-center" style="font-family: 'Salsa'; font-weight: 600; font-size: 56px;"><span style="color: #f76300;">Historias</span> de la Biblia<?php // the_title(); ?></h1>
             
-            <div class="ml-auto mr-auto d-none d-md-block" id="get_search" style="max-width: 60%;">
+            <div class="ml-auto mr-auto" id="get_search" style="max-width: 60%;">
                 <?php get_search_form(); ?>            
             </div>
             
-            <div class="mt-3 text-center d-none d-md-block">
-                <a href="https://historiasdelabiblia.org/antiguo-testamento/" class="btn btn-dark shadow-sm mr-2">Antiguo Testamento</a>
-                <a href="https://historiasdelabiblia.org/nuevo-testamento/" class="btn btn btn-dark shadow-sm ml-2">Nuevo Testamento</a>
+            <div class="mt-3 mb-5 text-center">
+                <a href="https://historiasdelabiblia.org/antiguo-testamento/" target="_self" class="btn btn-dark shadow-sm mr-2">Antiguo Testamento</a>
+                <a href="https://historiasdelabiblia.org/nuevo-testamento/" target="_self" class="btn btn btn-dark shadow-sm ml-2">Nuevo Testamento</a>
             </div>
             
-            <div class="mt-4 pt-3 mb-3 text-center d-none d-md-block">
+            <!--//GOOGLE ADSENSE (728x90) -->
+            <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>                
+                <div class="pt-4 mt-2 pb-2 text-center d-none d-lg-block">
+
+                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
+
+                </div>                
+            <?php } ?>
+            
+            <div class="text-center mt-md-0 pt-4 mb-5">
+                
+                <p><strong>Bienvenido</strong> a nuestro sitio web <strong>historiasdelabiblia.org</strong>, que está repleta de historias que todos hemos escuchado alguna vez. Y es por eso que en este sitio web podrás encontrar las mejores y grandes  <strong>HISTORIAS de la BIBLIA</strong>, tanto para adultos, jóvenes y niños completamente ilustradas para que puedas disfrutar de la lectura.</p>
+            
+            </div>
+
+            <div class="mb-5 text-center">
+
+                <h2 class="mb-4">Las mejores historias de la Biblia para leer</h2> 
                 
                 <div class="row">
 
@@ -81,14 +98,6 @@ if(have_posts()){
 
                 </div>
                 
-            </div>
-            
-            <div class="text-center mt-md-0 mt-3">
-                
-                <p><strong>Bienvenido</strong> a nuestra página web <strong>historiasdelabiblia.org</strong>, en donde podrás encontrar las Mejores y Grandes <strong>HISTORIAS de la BIBLIA</strong>, para Adultos, Jóvenes y Niños completamente ilustradas para leer.</p>
-
-                <!--<p>Las mejores historias de la Biblia para Leer</p>-->                
-
             </div>
             
         </section>
