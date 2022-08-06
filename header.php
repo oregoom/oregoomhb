@@ -42,6 +42,11 @@
             fill-opacity: 1;
         }
 
+
+        h2#hb-sub-title-at-nt{
+            font-size: 1.25rem !important;
+        }
+
         /* PC */
         @media (min-width: 768px) {
 

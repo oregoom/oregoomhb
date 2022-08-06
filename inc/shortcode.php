@@ -283,12 +283,12 @@ function hb_shortcode_at_nt( $atnt ){
 
                                 <div class="card-body rounded-bottom">
                                     
-                                    <h4 class="card-title h5 py-0" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700;">
+                                    <h2 class="card-title h5 py-0" id="hb-sub-title-at-nt" style="line-height: 1.3em; font-family: Raleway, sans-serif; font-weight: 700;">
                                         <a href="<?php the_permalink(); ?>" class="text-dark" target="_self"><?php the_title(); ?></a>
-                                    </h4>
+                                    </h2>
+
+                                    <p class="card-text"> <?php hb_excerpt_100_caracteres(get_the_excerpt()); ?> </p>
                                     
-                                    <?php //Funcion para extraer 100 caracteres
-                                            hb_excerpt_100_caracteres(get_the_excerpt()); ?>
                                 </div>
                             </div>
                         </div>
