@@ -106,7 +106,7 @@
                 }
 
                 h2#hb-title-historias-relato{
-                    font-size: 1.05rem !important;
+                    font-size: 1rem !important;
                 }
 
         }
@@ -257,6 +257,23 @@
                     }
                 </script>
 
+            </amp-analytics>
+
+            <amp-analytics  type="googleanalytics"  config="https://amp.analytics-debugger.com/ga4.json"  data-credentials="include">
+                <script  type="application/json">
+                {
+                "vars": {
+                    "GA4_MEASUREMENT_ID": "<?php echo get_option('template_oregoom_google_analytics_4'); ?>",
+                    "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
+                    "GOOGLE_CONSENT_ENABLED": false,
+                    "WEBVITALS_TRACKING": false,
+                    "PERFORMANCE_TIMING_TRACKING": false,
+                    "DEFAULT_PAGEVIEW_ENABLED": true,
+                    "SEND_DOUBLECLICK_BEACON": false,
+                    "ENABLE_REGIONAL_DATA_COLLECTION": true
+                }
+                }
+                </script>
             </amp-analytics>
             
         <?php } ?>
